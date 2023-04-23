@@ -14,25 +14,25 @@
 
 <script setup>
 defineProps({
-    data: Object
+  data: Object
 })
 </script>
 
 <template>
-    <div class="col">
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title"> {{ data.address1 }}
-                    <span class="badge text-bg-light">{{ data.address2 }}</span>
-                </h5>
-                <h6 class="card-subtitle mb-2 text-body-secondary"> </h6>
-                <p class="card-text">Managed by {{ data.manager }}</p>
-                <button type="button" class="btn btn-outline-success my-1">Write a Review...</button>
-            </div>
-            <div class="card-footer">
-                <small class="text-body-secondary"> {{ data.city + ', ' + data.state }}</small>
-            </div>
-
-        </div>
+  <div class="col">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">
+          {{ data.address1 }}
+          <span class="badge text-bg-light">{{ data.address2 }}</span>
+        </h5>
+        <h6 class="card-subtitle mb-2 text-body-secondary"></h6>
+        <p class="card-text">Managed by {{ data.manager }}</p>
+        <button type="button" class="btn btn-outline-success my-1">Write a Review...</button>
+      </div>
+      <div class="card-footer">
+        <small class="text-body-secondary"> {{ data.city + ', ' + data.state }}</small>
+      </div>
     </div>
+  </div>
 </template>
