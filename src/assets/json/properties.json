@@ -4,7 +4,7 @@
             "propertyID": "1",
             "address1": "1800 Sherman Ave.",
             "address2": "Suite 1-300",
-            "city": "Evanston",
+            "city": "Chicago",
             "state": "IL",
             "zip": "60201",
             "phone": "(847) 491-4357",
@@ -14,11 +14,11 @@
             "propertyID": "2",
             "address1": "1234 Sherman Ave.",
             "address2": "Suite 1-400",
-            "city": "Evanston",
-            "state": "IL",
+            "city": "Fresno",
+            "state": "CA",
             "zip": "60201",
             "phone": "(847) 491-4357",
-            "manager": "Northwestern"
+            "manager": "West"
           },
           {
             "propertyID": "3",
