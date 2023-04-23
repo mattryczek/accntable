@@ -1,6 +1,6 @@
 <script setup>
 import Navbar from '@/components/Navbar.vue'
-import Card from '../components/Card.vue'
+import Card from '../components/PropertyCard.vue'
 
 import propData from '@/assets/json/properties.json'
 
