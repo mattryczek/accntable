@@ -1,7 +1,12 @@
-<template>
-  <div class="home">
-    <h1>Welcome to Accntable!</h1>
-  </div>
-</template>
+<script setup>
+import MainSearch from '@/components/MainSearch.vue';
+import Footer from '@/components/Footer.vue';
 
-<style></style>
+</script>
+
+<template>
+    <div class="home container">
+        <MainSearch />
+        <Footer />
+    </div>
+</template>
