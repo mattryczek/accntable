@@ -1,0 +1,44 @@
+{
+    "properties": [
+        {
+            "propertyID": "1",
+            "address1": "1800 Sherman Ave.",
+            "address2": "Suite 1-300",
+            "city": "Evanston",
+            "state": "IL",
+            "zip": "60201",
+            "phone": "(847) 491-4357",
+            "manager": "Northwestern"
+          },
+          {
+            "propertyID": "2",
+            "address1": "1234 Sherman Ave.",
+            "address2": "Suite 1-400",
+            "city": "Evanston",
+            "state": "IL",
+            "zip": "60201",
+            "phone": "(847) 491-4357",
+            "manager": "Northwestern"
+          },
+          {
+            "propertyID": "3",
+            "address1": "633 Clark St.",
+            "address2": "",
+            "city": "Evanston",
+            "state": "IL",
+            "zip": "60208",
+            "phone": "(847) 491-1234",
+            "manager": "Northwestern"
+          },
+          {
+            "propertyID": "4",
+            "address1": "619 Emerson St.",
+            "address2": "",
+            "city": "Evanston",
+            "state": "IL",
+            "zip": "60201",
+            "phone": "(847) 491-5555",
+            "manager": "Northwestern"
+          }
+    ]
+}
