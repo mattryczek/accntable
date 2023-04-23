@@ -11,7 +11,9 @@ const properties = propData.properties;
 <template>
   <Navbar />
   <div class="properties container">
-    <Card v-for="property in properties" :key="property.id" :data=property />
+    <div class="row row-cols-3 g-3">
+      <Card v-for="property in properties" :key="property.id" :data=property />
+    </div>
   </div>
 </template>
 
