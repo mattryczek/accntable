@@ -14,17 +14,29 @@ const router = createRouter({
     {
       path: '/properties',
       name: 'properties',
-      component: () => import('../views/Properties.vue')
+      component: () => import('@views/Properties.vue')
+    },
+    {
+      // We don't want a null property so if they browse
+      // manually to /property and don't supply an ID we
+      // send them to /properties instead.
+      path: '/property',
+      redirect: { name: 'properties'}
+    },
+    {
+      path: '/property/:id',
+      name: 'property',
+      component: () => import('@views/PropertyDetail.vue')
     },
     {
       path: '/landlords',
       name: 'landlords',
-      component: () => import('../views/Landlords.vue')
+      component: () => import('@views/Landlords.vue')
     },
     {
       path: '/about',
       name: 'about',
-      component: () => import('../views/About.vue')
+      component: () => import('@views/About.vue')
     }
   ]
 })
