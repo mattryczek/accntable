@@ -32,7 +32,6 @@ defineProps({
           </h5>
           <h6 class="card-subtitle mb-2 text-body-secondary"></h6>
           <p class="card-text">Managed by {{ data.manager }}</p>
-          <button type="button" class="btn btn-outline-success my-1">Write a Review...</button>
         </div>
         <div class="card-footer">
           <small class="text-body-secondary"> {{ data.city + ', ' + data.state }}</small>
