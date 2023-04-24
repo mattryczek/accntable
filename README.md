@@ -1,6 +1,6 @@
 # accntable
 
-This template should help get you started developing with Vue 3 in Vite.
+RateMyProfs meets apartments.com
 
 ## Recommended IDE Setup
 
@@ -20,6 +20,12 @@ npm install
 
 ```sh
 npm run dev
+```
+
+### Compile and Hot-Reload for Dev Across LAN
+
+```sh
+npm run host
 ```
 
 ### Compile and Minify for Production
