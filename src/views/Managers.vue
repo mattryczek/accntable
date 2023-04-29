@@ -4,8 +4,8 @@ import Navbar from '@/components/Navbar.vue'
 
 <template>
   <Navbar />
-  <div class="landlords">
-    <h1>This is the page that shows all the landlords we reviewed.</h1>
+  <div class="managers">
+    <h1>This is the page that shows all the property managers we reviewed.</h1>
   </div>
 </template>
 

@@ -29,9 +29,14 @@ const router = createRouter({
       component: () => import('@views/PropertyDetail.vue')
     },
     {
-      path: '/landlords',
-      name: 'landlords',
-      component: () => import('@views/Landlords.vue')
+      path: '/managers',
+      name: 'managers',
+      component: () => import('@views/Managers.vue')
+    },
+    {
+      path: '/tenants',
+      name: 'tenants',
+      component: () => import('@views/Tenants.vue')
     },
     {
       path: '/about',

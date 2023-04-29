@@ -23,7 +23,10 @@ import { RouterLink } from 'vue-router'
             <RouterLink to="/properties" class="nav-link">Properties</RouterLink>
           </li>
           <li class="nav-item">
-            <RouterLink to="/landlords" class="nav-link">Landlords</RouterLink>
+            <RouterLink to="/managers" class="nav-link">Property Managers</RouterLink>
+          </li>
+          <li class="nav-item">
+            <RouterLink to="/tenants" class="nav-link">Tenants</RouterLink>
           </li>
           <li class="nav-item">
             <RouterLink to="/about" class="nav-link">About</RouterLink>
