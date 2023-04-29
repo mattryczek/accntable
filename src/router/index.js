@@ -21,7 +21,7 @@ const router = createRouter({
       // manually to /property and don't supply an ID we
       // send them to /properties instead.
       path: '/property',
-      redirect: { name: 'properties'}
+      redirect: { name: 'properties' }
     },
     {
       path: '/property/:id',

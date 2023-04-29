@@ -13,12 +13,11 @@
 -->
 
 <script setup>
-import { ref } from 'vue';
+import { ref } from 'vue'
 
 defineProps({
   data: Object
 })
-
 </script>
 
 <template>
@@ -41,6 +40,4 @@ defineProps({
   </div>
 </template>
 
-<style>
-
-</style>
+<style></style>
