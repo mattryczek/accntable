@@ -20,6 +20,7 @@ import { ref } from 'vue'
 
 import Navbar from '@comp/Navbar.vue'
 import ReviewCard from '@comp/ReviewCard.vue'
+import Footer from '@comp/Footer.vue'
 
 import propData from '@/assets/json/properties.json'
 import reviewData from '@/assets/json/reviews.json'
@@ -40,7 +41,7 @@ let photoURL = ref(current.photoURL)
 
       <div class="col">
         <h1>{{ current.address1 }}</h1>
-        <h3>{{ current.address2 }}</h3>
+        <h5 class="text-muted fw-lighter">{{ current.address2 }}</h5>
       </div>
 
       <div class="col">
@@ -53,9 +54,10 @@ let photoURL = ref(current.photoURL)
 
   
   <div id="reviews" class="container mt-4">
-    <h2 class="border-bottom mb-3">Reviews for this Property</h2>
+    <h3 class="border-bottom mb-3">Reviews for this Property</h3>
     <ReviewCard v-for="review in reviews" :key="review.id" :data="review" />
   </div>
+  <Footer />
 </template>
 
 <style>
