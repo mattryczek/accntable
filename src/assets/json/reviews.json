@@ -1,0 +1,32 @@
+{
+    "reviews": [
+        {
+            "id": "1",
+            "username": "some cat",
+            "avatar_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Rusty_spotted_cat_1.jpg/440px-Rusty_spotted_cat_1.jpg",
+            "review_text": "Yeah this place was alright i guess not enough mice tho 7/10",
+            "post_date": "October 7th, 2023"
+        },
+        {
+            "id": "2",
+            "username": "chronically online cat",
+            "avatar_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Rustyspottedcat%2C_crop.jpg/440px-Rustyspottedcat%2C_crop.jpg",
+            "review_text": "guy above me L + skill issue + just catch more bozo",
+            "post_date": "October 6th, 2023"
+        },
+        {
+            "id": "3",
+            "username": "guess who lol a cat",
+            "avatar_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Rusty_spotted_cat_2%2C_crop.jpg/440px-Rusty_spotted_cat_2%2C_crop.jpg",
+            "review_text": "kkkkkkkkkkkjjjjjjjmmmmmmmmmmmmmnnnnnnnnnnnnnnnnn (oops i steped on keyboard hehe :3)",
+            "post_date": "October 5th, 2023"
+        },
+        {
+            "id": "4",
+            "username": "george",
+            "avatar_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Prionailurus_rubiginosus_9-Parc_des_f%C3%A9lins.JPG/440px-Prionailurus_rubiginosus_9-Parc_des_f%C3%A9lins.JPG",
+            "review_text": "I confess to having made one take with a black drape covering a window. This is not only the addition of a property, but must also be regarded as a kind of lighting arrangement.     I confess to moving furniture and fittings around the house.     I confess to having taken with me a number of albums of my favourite comic book series as a youth, Linda & Valentin (Valérian and Laureline).     I confess to helping to chase the neighbour's free-range hens across our location and including them in the film.     I confess that I brought a photographic image from an old lady from the area and hung it in a prominent position in one scene: not as part of the plot, but more as a selfish, spontaneous, pleasureable whim.     I confess to borrowing a hydraulic platform from a painter, which we used for the only two bird's-eye overview shots in the film.     I do solemnly declare that in my presence the remainder of Dogme 3 Mifune was produced in accordance with the vow of chastity.     I also point out that the film has been approved by DOGME 95 as a Dogme film, as in real terms no more than a single breach of the rules has been committed. The rest may be regarded as moral transgressions.",
+            "post_date": "October 4th, 2023"
+        }
+    ]
+}
