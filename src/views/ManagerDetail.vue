@@ -16,7 +16,6 @@ const managers = manData.managers
 const reviews = reviewData.reviews
 
 let current = managers.find((el) => el.id === route.params.id)
-let photoURL = ref(current.image_url)
 </script>
 
 <template>
