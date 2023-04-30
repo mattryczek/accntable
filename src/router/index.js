@@ -34,6 +34,15 @@ const router = createRouter({
       component: () => import('@views/Managers.vue')
     },
     {
+      path: '/manager/:id',
+      name: 'manager',
+      component: () => import('@views/ManagerDetail.vue')
+    },
+    {
+      path: '/manager',
+      redirect: { name: 'managers' }
+    },
+    {
       path: '/tenants',
       name: 'tenants',
       component: () => import('@views/Tenants.vue')
