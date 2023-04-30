@@ -1,5 +1,5 @@
 <!-- 
-    JSON Template for Property Object
+    JSON Index for Property Object
 
     address1: String,
     address2: String,
@@ -9,6 +9,7 @@
     propertyID: Number,
     state: String,
     zip: String,
+    photoURL: String
 
 -->
 
