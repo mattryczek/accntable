@@ -40,5 +40,3 @@ defineProps({
     </RouterLink>
   </div>
 </template>
-
-<style></style>
