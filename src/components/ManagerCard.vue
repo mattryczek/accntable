@@ -19,11 +19,13 @@ let rating = '★'.repeat(starsInt) + '☆'.repeat(5 - starsInt)
 </script>
 
 <template>
-  <div class="card my-2 shadow-sm">
-    <div class="card-body">
-      <h5 class="card-title">{{ data.name }}</h5>
-      <h6>{{ rating }}</h6>
-      <pre class="card-text">{{ data.address + '\n' + data.city + ', ' + data.state + ' ' + data.zip }}</pre>
+  <RouterLink :to="`/manager/${data.id}`" class="nav-link">
+    <div class="card my-2 shadow-sm">
+      <div class="card-body">
+        <h5 class="card-title">{{ data.name }}</h5>
+        <h6>{{ rating }}</h6>
+        <pre class="card-text">{{ data.address + '\n' + data.city + ', ' + data.state + ' ' + data.zip }}</pre>
+      </div>
     </div>
-  </div>
+  </RouterLink>
 </template>
