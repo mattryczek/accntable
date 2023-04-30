@@ -14,7 +14,7 @@ let props = defineProps({
   data: Object
 })
 
-let starsInt = parseInt(props.data.stars)
+let starsInt = props.data.stars
 let rating = '★'.repeat(starsInt) + '☆'.repeat(5 - starsInt)
 </script>
 

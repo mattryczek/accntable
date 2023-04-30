@@ -32,7 +32,7 @@ let photoURL = ref(current.image_url)
             </div>
 
             <div class="col">
-                <ScoreCard />
+                <ScoreCard :key="current.id" :data="current.categories"/>
             </div>
 
 
