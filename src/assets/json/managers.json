@@ -1,65 +1,112 @@
 {
-    "managers": [
-        {
-            "id": "1",
-            "name": "Wildcat Properties",
-            "address": "1680 Chicago Ave",
-            "city": "Evanston",
-            "state": "IL",
-            "zip": "60201",
-            "stars": "4",
-            "image_url": "test"
-          },
-          {
-            "id": "2",
-            "name": "Wildcat Real Estate LLC",
-            "address": "2253 North Ave",
-            "city": "Evanston",
-            "state": "IL",
-            "zip": "60201",
-            "stars": "5",
-            "image_url": "test"
-          },
-          {
-            "id": "3",
-            "name": "Wildcat Realtors Inc.",
-            "address": "3256 Michigan Ave",
-            "city": "Chicago",
-            "state": "IL",
-            "zip": "60601",
-            "stars": "3",
-            "image_url": "test"
-          },
-          {
-            "id": "4",
-            "name": "Wildcat Holdings",
-            "address": "2255 W. Long Rd",
-            "city": "Louisville",
-            "state": "KY",
-            "zip": "40018",
-            "stars": "4",
-            "image_url": "test"
-          },
-          {
-            "id": "5",
-            "name": "Wildcat Management",
-            "address": "6585 N. West St.",
-            "city": "Chicago",
-            "state": "IL",
-            "zip": "60634",
-            "stars": "5",
-            "image_url": "test"
-          },
-          {
-            "id": "6",
-            "name": "Wildcat LLC",
-            "address": "9658 Ohio Ave",
-            "city": "Chicago",
-            "state": "IL",
-            "zip": "90210",
-            "stars": "2",
-            "image_url": "test"
-          }
-
-    ]
+  "managers": [
+    {
+      "id": "1",
+      "name": "Wildcat Properties",
+      "address": "1680 Chicago Ave",
+      "city": "Evanston",
+      "state": "IL",
+      "zip": "60201",
+      "stars": 4,
+      "image_url": "test",
+      "categories": {
+        "responsiveness": 5,
+        "friendliness": 5,
+        "management": 4,
+        "maintenance": 5,
+        "rental_rate": 4,
+        "communication": 3
+      }
+    },
+    {
+      "id": "2",
+      "name": "Wildcat Real Estate LLC",
+      "address": "2253 North Ave",
+      "city": "Evanston",
+      "state": "IL",
+      "zip": "60201",
+      "stars": 2,
+      "image_url": "test",
+      "categories": {
+        "responsiveness": 3,
+        "friendliness": 5,
+        "management": 2,
+        "maintenance": 5,
+        "rental_rate": 3,
+        "communication": 1
+      }
+    },
+    {
+      "id": "3",
+      "name": "Wildcat Realtors Inc.",
+      "address": "3256 Michigan Ave",
+      "city": "Chicago",
+      "state": "IL",
+      "zip": "60601",
+      "stars": 3,
+      "image_url": "test",
+      "categories": {
+        "responsiveness": 3,
+        "friendliness": 4,
+        "management": 5,
+        "maintenance": 2,
+        "rental_rate": 3,
+        "communication": 5
+      }
+    },
+    {
+      "id": "4",
+      "name": "Wildcat Holdings",
+      "address": "2255 W. Long Rd",
+      "city": "Louisville",
+      "state": "KY",
+      "zip": "40018",
+      "stars": 4,
+      "image_url": "test",
+      "categories": {
+        "responsiveness": 5,
+        "friendliness": 2,
+        "management": 3,
+        "maintenance": 5,
+        "rental_rate": 5,
+        "communication": 5
+      }
+    },
+    {
+      "id": "5",
+      "name": "Wildcat Management",
+      "address": "6585 N. West St.",
+      "city": "Chicago",
+      "state": "IL",
+      "zip": "60634",
+      "stars": 5,
+      "image_url": "test",
+      "categories": {
+        "responsiveness": 5,
+        "friendliness": 5,
+        "management": 5,
+        "maintenance": 5,
+        "rental_rate": 5,
+        "communication": 5
+      }
+    },
+    {
+      "id": "6",
+      "name": "Wildcat LLC",
+      "address": "9658 Ohio Ave",
+      "city": "Chicago",
+      "state": "IL",
+      "zip": "90210",
+      "stars": 2,
+      "image_url": "test",
+      "categories": {
+        "responsiveness": 2,
+        "friendliness": 3,
+        "management": 1,
+        "maintenance": 2,
+        "rental_rate": 3,
+        "communication": 1
+      }
+    }
+  ]
 }
