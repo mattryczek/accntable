@@ -24,7 +24,9 @@ let rating = '★'.repeat(starsInt) + '☆'.repeat(5 - starsInt)
       <div class="card-body">
         <h5 class="card-title">{{ data.name }}</h5>
         <h6>{{ rating }}</h6>
-        <pre class="card-text">{{ data.address + '\n' + data.city + ', ' + data.state + ' ' + data.zip }}</pre>
+        <pre class="card-text">{{
+          data.address + '\n' + data.city + ', ' + data.state + ' ' + data.zip
+        }}</pre>
       </div>
     </div>
   </RouterLink>

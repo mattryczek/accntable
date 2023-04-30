@@ -1,7 +1,7 @@
 <script setup>
 import Navbar from '@comp/Navbar.vue'
 import Footer from '@comp/Footer.vue'
-import ManagerCard from '@comp/ManagerCard.vue';
+import ManagerCard from '@comp/ManagerCard.vue'
 
 import manData from '@json/managers.json'
 

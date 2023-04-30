@@ -17,34 +17,31 @@ const reviews = reviewData.reviews
 
 let current = managers.find((el) => el.id === route.params.id)
 let photoURL = ref(current.image_url)
-
 </script>
 
 <template>
-    <Navbar />
-    <div class="container">
-        <div class="row">
+  <Navbar />
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h1>{{ current.name }}</h1>
+        <h5 class="text-muted fw-lighter">{{ current.address }}</h5>
+        <h5 class="text-muted fw-lighter">
+          {{ current.city + ', ' + current.state + ' ' + current.zip }}
+        </h5>
+      </div>
 
-            <div class="col">
-                <h1>{{ current.name }}</h1>
-                <h5 class="text-muted fw-lighter">{{ current.address }}</h5>
-                <h5 class="text-muted fw-lighter">{{ current.city + ', ' + current.state + ' ' + current.zip }}</h5>
-            </div>
-
-            <div class="col">
-                <ScoreCard :key="current.id" :data="current.categories"/>
-            </div>
-
-
-        </div>
+      <div class="col">
+        <ScoreCard :key="current.id" :data="current.categories" />
+      </div>
     </div>
+  </div>
 
-
-    <div id="reviews" class="container mt-4">
-        <h3 class="border-bottom mb-3">Reviews for this Property Manager</h3>
-        <ReviewCard v-for="review in reviews" :key="review.id" :data="review" />
-    </div>
-    <Footer />
+  <div id="reviews" class="container mt-4">
+    <h3 class="border-bottom mb-3">Reviews for this Property Manager</h3>
+    <ReviewCard v-for="review in reviews" :key="review.id" :data="review" />
+  </div>
+  <Footer />
 </template>
 
 <style></style>
