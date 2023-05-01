@@ -1,0 +1,69 @@
+{
+    "tenants": [
+      {
+        "id": "1",
+        "name": "Mateusz",
+        "city": "Evanston",
+        "state": "IL",
+        "stars": 5,
+        "image_url": "test",
+        "categories": {
+          "responsiveness": 5,
+          "friendliness": 5,
+          "cleanliness": 4,
+          "communication": 3,
+          "returned_property": 5,
+          "report_count": 0
+        }
+      },
+      {
+        "id": "2",
+        "name": "Char",
+        "city": "Evanston",
+        "state": "IL",
+        "stars": 5,
+        "image_url": "test",
+        "categories": {
+          "responsiveness": 5,
+          "friendliness": 5,
+          "cleanliness": 4,
+          "communication": 3,
+          "returned_property": 5,
+          "report_count": 0
+        }
+      },
+      {
+        "id": "3",
+        "name": "Catherine",
+        "city": "Evanston",
+        "state": "IL",
+        "stars": 5,
+        "image_url": "test",
+        "categories": {
+          "responsiveness": 5,
+          "friendliness": 5,
+          "cleanliness": 4,
+          "communication": 3,
+          "returned_property": 5,
+          "report_count": 0
+        }
+      },
+      {
+        "id": "4",
+        "name": "Walker",
+        "city": "Evanston",
+        "state": "IL",
+        "stars": 5,
+        "image_url": "test",
+        "categories": {
+          "responsiveness": 5,
+          "friendliness": 5,
+          "cleanliness": 4,
+          "communication": 3,
+          "returned_property": 5,
+          "report_count": 0
+        }
+      }
+    ]
+  }
+  

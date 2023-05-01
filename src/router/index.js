@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-import Home from '../views/Home.vue'
+import Home from '@views/Home.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -46,6 +46,15 @@ const router = createRouter({
       path: '/tenants',
       name: 'tenants',
       component: () => import('@views/Tenants.vue')
+    },
+    {
+      path: '/tenant/:id',
+      name: 'tenant',
+      component: () => import('@views/TenantDetail.vue')
+    },
+    {
+      path: '/tenant',
+      redirect: { name: 'tenants' }
     },
     {
       path: '/about',
