@@ -5,6 +5,7 @@ import { useRoute } from 'vue-router'
 import Navbar from '@comp/Navbar.vue'
 import ReviewCard from '@comp/ReviewCard.vue'
 import ScoreCard from '@comp/ScoreCard.vue'
+import ReviewForm from '@comp/TenantReviewform.vue'
 import Footer from '@comp/Footer.vue'
 
 import tenData from '@json/tenants.json'
@@ -33,6 +34,8 @@ let current = tenants.find((el) => el.id === route.params.id)
                 <ScoreCard :key="current.id" :data="current.categories" />
             </div>
         </div>
+
+        <ReviewForm />
 
         <div class="accordion my-4" id="accordionExample">
             <div class="accordion-item">
