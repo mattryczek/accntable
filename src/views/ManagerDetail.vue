@@ -5,7 +5,7 @@ import { ref } from 'vue'
 
 import Navbar from '@comp/Navbar.vue'
 import ReviewCard from '@comp/ReviewCard.vue'
-import ScoreCard from '@comp/ScoreCard.vue'
+import ScoreCard from '@comp/ManagerScoreCard.vue'
 import ReviewForm from '@comp/ManagerReviewform.vue'
 import Footer from '@comp/Footer.vue'
 

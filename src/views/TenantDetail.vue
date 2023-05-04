@@ -4,7 +4,7 @@ import { useRoute } from 'vue-router'
 
 import Navbar from '@comp/Navbar.vue'
 import ReviewCard from '@comp/ReviewCard.vue'
-import ScoreCard from '@comp/ScoreCard.vue'
+import ScoreCard from '@comp/TenantScoreCard.vue'
 import ReviewForm from '@comp/TenantReviewform.vue'
 import Footer from '@comp/Footer.vue'
 
