@@ -3,7 +3,8 @@
     "username":
     "avatar_url": 
     "review_text":
-    "post_date":-->
+    "post_date":
+  -->
 
 <script setup>
 import { ref } from 'vue'
