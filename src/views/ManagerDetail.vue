@@ -6,6 +6,7 @@ import { ref } from 'vue'
 import Navbar from '@comp/Navbar.vue'
 import ReviewCard from '@comp/ReviewCard.vue'
 import ScoreCard from '@comp/ScoreCard.vue'
+import ReviewForm from '@comp/ManagerReviewform.vue'
 import Footer from '@comp/Footer.vue'
 
 import manData from '@json/managers.json'
@@ -34,6 +35,10 @@ let current = managers.find((el) => el.id === route.params.id)
         <ScoreCard :key="current.id" :data="current.categories" />
       </div>
     </div>
+  </div>
+
+  <div class="container">
+    <ReviewForm />
   </div>
 
   <div id="reviews" class="container mt-4">
