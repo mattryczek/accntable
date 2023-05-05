@@ -1,8 +1,5 @@
 <script setup>
 import Filters from '@comp/SearchFilterCard.vue';
-
-import { ref } from 'vue'
-
 </script>
 
 <template>

@@ -5,7 +5,14 @@ import TenantCard from '@comp/TenantCard.vue'
 
 import tenData from '@json/tenants.json'
 
-const tenants = tenData.tenants
+import { supabase } from '@/supabase'
+
+let { data: tenants, error } = await supabase
+  .from('tenant')
+  .select()
+  .limit(5)
+
+// const tenants = tenData.tenants
 </script>
 
 <template>
