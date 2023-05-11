@@ -1,10 +1,12 @@
 <!-- 
-"responsiveness":
+"tenant_rating_id":
+"tenant_id":
+"timeliness_responsiveness":
 "friendliness":
-"cleanliness":
 "communication":
-"returned_property":
-"report_count":
+"cleanliness"
+"property_condition"
+"notes":
 -->
 
 <script setup>
@@ -15,7 +17,7 @@ let ratingsObj = defineProps({
 let ratings = ratingsObj.data
 
 function transform(number) {
-    return '★'.repeat(number) + '☆'.repeat(5 - number)
+    return number //'★'.repeat(number) + '☆'.repeat(5 - number)
 }
 </script>
 
@@ -27,7 +29,7 @@ function transform(number) {
                 <p class="card-text">
                     Responsiveness
                     <br />
-                    <span>{{ transform(ratings.responsiveness) }}</span>
+                    <span>{{ transform(ratings.timeliness_responsiveness) }}</span>
                 </p>
                 <p class="card-text">
                     Friendliness
@@ -49,7 +51,7 @@ function transform(number) {
                 <p class="card-text">
                     Property Return Condition
                     <br />
-                    <span>{{ transform(ratings.returned_property) }}</span>
+                    <span>{{ transform(ratings.property_condition) }}</span>
                 </p>
                 <p class="card-text">
                     Number of times Reported
