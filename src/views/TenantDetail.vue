@@ -25,7 +25,7 @@ current = current[0]
 
 let { data: reviews_raw, error2 } = await supabase
     .from('tenant_ratings')
-    .select('notes, name, created_at')
+    .select('notes, author, created_at')
     .eq('tenant_id', route.params.id)
 
 const reviews = ref(reviews_raw)
