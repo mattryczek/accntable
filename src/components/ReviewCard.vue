@@ -1,11 +1,3 @@
-<!-- 
-    "id":
-    "username":
-    "avatar_url": 
-    "review_text":
-    "post_date":
-  -->
-
 <script setup>
 defineProps({
   data: Object
