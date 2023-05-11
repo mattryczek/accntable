@@ -27,6 +27,7 @@ let { data: reviews_raw, error2 } = await supabase
     .from('tenant_ratings')
     .select('notes, author, created_at')
     .eq('tenant_id', route.params.id)
+    .order('created_at', {ascending: false})
 
 const reviews = ref(reviews_raw)
 
@@ -39,12 +40,14 @@ async function post_data(data) {
     data["tenant_id"] = route.params.id
     data["created_at"] = new Date().toISOString()
 
+    console.log(data)
+
     const { error } = await supabase
         .from('tenant_ratings')
         .insert(data)
 
     reviews.value.unshift({
-        name: data.name,
+        author: data.author,
         notes: data.notes,
         created_at: data.created_at
     })

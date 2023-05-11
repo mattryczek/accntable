@@ -24,7 +24,7 @@ function formOnSubmit(e) {
                 <div class="row">
                     <div class="col">
                         <div class="form-floating mb-3">
-                            <input type="text" name="name" class="form-control" placeholder="Enter Your Name">
+                            <input type="text" name="author" class="form-control" placeholder="Enter Your Name">
                             <label for="floatingInput">Enter Your Name</label>
                         </div>
 
