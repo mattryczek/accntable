@@ -16,7 +16,7 @@ const props = defineProps({
         <input type="radio" value="2" class="btn-check" :name="`${internal}`" :id="`${label}-option2`">
         <label class="btn btn-outline-secondary mx-1" :for="`${label}-option2`">2</label>
 
-        <input type="radio" value="3" class="btn-check" :name="`${internal}`" :id="`${label}-option3`" checked>
+        <input type="radio" value="3" class="btn-check" :name="`${internal}`" :id="`${label}-option3`">
         <label class="btn btn-outline-secondary mx-1" :for="`${label}-option3`">3</label>
 
         <input type="radio" value="4" class="btn-check" :name="`${internal}`" :id="`${label}-option4`">
