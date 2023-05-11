@@ -1,16 +1,20 @@
 <script setup>
+// VUE imports
 // https://stackoverflow.com/a/74286664
 import { useRoute } from 'vue-router'
+import { ref } from 'vue'
 
+// Component Imports
 import Navbar from '@comp/Navbar.vue'
 import ReviewCard from '@comp/ReviewCard.vue'
 import ScoreCard from '@comp/TenantScoreCard.vue'
 import ReviewForm from '@comp/TenantReviewform.vue'
 import Footer from '@comp/Footer.vue'
 
-const route = useRoute()
-
+// External imports
 import { supabase } from '@/supabase'
+
+const route = useRoute()
 
 let { data: current, error } = await supabase
     .from('tenant')
@@ -19,10 +23,12 @@ let { data: current, error } = await supabase
 
 current = current[0]
 
-let { data: reviews, error2 } = await supabase
+let { data: reviews_raw, error2 } = await supabase
     .from('tenant_ratings')
     .select('notes, name, created_at')
     .eq('tenant_id', route.params.id)
+
+const reviews = ref(reviews_raw)
 
 let { data: avg_ratings, error3 } = await supabase
     .from('tenant_average_rating')
@@ -37,6 +43,11 @@ async function post_data(data) {
         .from('tenant_ratings')
         .insert(data)
 
+    reviews.value.unshift({
+        name: data.name,
+        notes: data.notes,
+        created_at: data.created_at
+    })
 }
 
 </script>

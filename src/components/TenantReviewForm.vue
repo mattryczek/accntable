@@ -1,8 +1,6 @@
 <script setup>
 import InlineRadio from '@comp/InlineRadio.vue'
 
-import { supabase } from '@/supabase'
-
 const emit = defineEmits(['response'])
 
 function formOnSubmit(e) {
