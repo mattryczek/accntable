@@ -14,6 +14,8 @@ let ratingsObj = defineProps({
 
 let ratings = ratingsObj.data
 
+console.log(ratings)
+
 function transform(number) {
     return '★'.repeat(number) + '☆'.repeat(5 - number)
 }
@@ -27,7 +29,7 @@ function transform(number) {
                 <p class="card-text">
                     Responsiveness
                     <br />
-                    <span>{{ transform(ratings.responsiveness) }}</span>
+                    <span>{{ transform(ratings.timeliness_responsiveness) }}</span>
                 </p>
                 <p class="card-text">
                     Friendliness
@@ -37,7 +39,7 @@ function transform(number) {
                 <p class="card-text">
                     Management
                     <br />
-                    <span>{{ transform(ratings.management) }}</span>
+                    <span>{{ transform(ratings.management_abilities) }}</span>
                 </p>
             </div>
             <div class="col-md-6 my-2">
@@ -49,7 +51,7 @@ function transform(number) {
                 <p class="card-text">
                     Rental Rate
                     <br />
-                    <span>{{ transform(ratings.rental_rate) }}</span>
+                    <span>{{ transform(ratings.reasonable_rate) }}</span>
                 </p>
                 <p class="card-text">
                     Communication
