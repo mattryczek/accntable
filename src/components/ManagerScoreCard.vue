@@ -14,8 +14,6 @@ let ratingsObj = defineProps({
 
 let ratings = ratingsObj.data
 
-console.log(ratings)
-
 function transform(number) {
     return '★'.repeat(number) + '☆'.repeat(5 - number)
 }

@@ -6,7 +6,7 @@ import { ref } from 'vue'
 
 // Component Imports
 import Navbar from '@comp/Navbar.vue'
-import ReviewCard from '@comp/ReviewCard.vue'
+import ReviewCard from '@comp/ManagerReviewCard.vue'
 import ScoreCard from '@comp/ManagerScoreCard.vue'
 import ReviewForm from '@comp/ManagerReviewform.vue'
 import Footer from '@comp/Footer.vue'
@@ -26,18 +26,17 @@ current = current[0]
 
 let { data: reviews_raw, error2 } = await supabase
   .from('pm_ratings')
-  .select('notes, author, created_at')
+  .select('pm_rating_id, notes, author, created_at, thumbs_up, thumbs_down')
   .eq('prop_manager_id', route.params.id)
   .order('created_at', { ascending: false })
 
 const reviews = ref(reviews_raw)
+console.log(reviews_raw)
 
 let { data: avg_ratings, error3 } = await supabase
   .from('pm_average_rating')
   .select()
   .eq('business_name', 'Wildcat LLC') //route.params.id)
-
-console.log(avg_ratings[0])
 
 async function post_data(data) {
   data["prop_manager_id"] = route.params.id
@@ -79,7 +78,7 @@ async function post_data(data) {
 
   <div id="reviews" class="container mt-4">
     <h3 class="border-bottom mb-3">Reviews for this Property Manager</h3>
-    <ReviewCard v-for="review in reviews" :key="review.id" :data="review" />
+    <ReviewCard v-for="review in reviews" :key="review.pm_rating_id" :data="review" />
   </div>
   <Footer />
 </template>

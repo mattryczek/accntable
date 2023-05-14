@@ -6,7 +6,7 @@ import { ref } from 'vue'
 
 // Component Imports
 import Navbar from '@comp/Navbar.vue'
-import ReviewCard from '@comp/ReviewCard.vue'
+import ReviewCard from '@comp/TenantReviewCard.vue'
 import ScoreCard from '@comp/TenantScoreCard.vue'
 import ReviewForm from '@comp/TenantReviewform.vue'
 import Footer from '@comp/Footer.vue'
@@ -25,7 +25,7 @@ current = current[0]
 
 let { data: reviews_raw, error2 } = await supabase
     .from('tenant_ratings')
-    .select('notes, author, created_at')
+    .select('tenant_rating_id, notes, author, created_at, thumbs_up, thumbs_down')
     .eq('tenant_id', route.params.id)
     .order('created_at', {ascending: false})
 
