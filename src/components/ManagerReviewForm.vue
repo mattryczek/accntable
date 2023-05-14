@@ -22,15 +22,15 @@ import InlineRadio from '@comp/InlineRadio.vue'
                 </div>
                 <div class="row col">
                     <div class="col">
-                        <InlineRadio :label="`Responsiveness`" />
-                        <InlineRadio :label="`Friendliness`" />
-                        <InlineRadio :label="`Management`" />
+                        <InlineRadio :label="`Responsiveness`" :internal="`timeliness_responsiveness`" />
+                        <InlineRadio :label="`Friendliness`" :internal="`friendliness`" />
+                        <InlineRadio :label="`Management`" :internal="`management_abilities`" />
                         <button class="btn btn-primary mt-4">Submit</button>
                     </div>
                     <div class="col">
-                        <InlineRadio :label="`Maintenance`" />
-                        <InlineRadio :label="`Rental Rate`" />
-                        <InlineRadio :label="`Communication`" />
+                        <InlineRadio :label="`Maintenance`" :internal="`maintenance`" />
+                        <InlineRadio :label="`Rental Rate`" :internal="`reasonable_rate`" />
+                        <InlineRadio :label="`Communication`" :internal="`communication`" />
                     </div>
 
                 </div>
