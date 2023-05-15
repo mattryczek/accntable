@@ -19,7 +19,7 @@ import { useRoute } from 'vue-router'
 import { ref } from 'vue'
 
 import Navbar from '@comp/Navbar.vue'
-import ReviewCard from '@comp/ReviewCard.vue'
+import ReviewCard from '@comp/PropertyReviewCard.vue'
 import Footer from '@comp/Footer.vue'
 
 import propData from '@/assets/json/properties.json'

@@ -13,6 +13,11 @@ function transform(iso_string) {
 const thumbsup = ref(props.data.thumbs_up)
 const thumbsdown = ref(props.data.thumbs_down)
 
+const { data: images, error } = await supabase
+  .from('review_images')
+  .select('image_id, link')
+  .eq('pm_review_id', props.data.pm_rating_id)
+
 async function upvote() {
 
   const { error } = await supabase
@@ -22,14 +27,13 @@ async function upvote() {
 
 }
 
-
 async function downvote() {
 
   const { error } = await supabase
     .from('pm_ratings')
     .update({ thumbs_down: ++thumbsdown.value })
     .eq('pm_rating_id', props.data.pm_rating_id)
-  
+
 }
 </script>
 
@@ -39,11 +43,22 @@ async function downvote() {
       <h5 class="card-title">
         {{ data.author }} | <small class="text-muted">{{ transform(data.created_at) }}</small>
       </h5>
-      <p class="card-text">{{ data.notes }}</p>
-      <button @click="upvote" class="btn btn-outline-success me-2">👍 {{ thumbsup }}</button>
-      <button @click="downvote" class="btn btn-outline-danger">👎 {{ thumbsdown }}</button>
+
+      <p class="card-text mt-2">{{ data.notes }}</p>
+      <img class="img-thumbnail me-1 mt-1" v-for="image in images" :key="image.image_id" :src="image.link">
+
+      <div class="mt-3">
+        <button @click="upvote" class="btn btn-outline-success me-2">👍 {{ thumbsup }}</button>
+        <button @click="downvote" class="btn btn-outline-danger">👎 {{ thumbsdown }}</button>
+      </div>
+
     </div>
   </div>
 </template>
 
-<style></style>
+<style>
+img {
+  max-width: 200px;
+  max-height: 200px;
+}
+</style>
