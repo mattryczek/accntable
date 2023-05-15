@@ -1,12 +1,3 @@
-<!-- 
-  "responsiveness":
-  "friendliness":
-  "management":
-  "maintenance":
-  "rental_rate":
-  "communication":
--->
-
 <script setup>
 let ratingsObj = defineProps({
     data: Object
