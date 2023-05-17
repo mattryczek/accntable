@@ -36,7 +36,7 @@ console.log(reviews_raw)
 let { data: avg_ratings, error3 } = await supabase
   .from('pm_average_rating')
   .select()
-  .eq('business_name', 'Wildcat LLC') //route.params.id)
+  .eq('prop_manager_id', route.params.id)
 
 async function post_data(data) {
   data["prop_manager_id"] = route.params.id
