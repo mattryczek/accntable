@@ -66,7 +66,7 @@ async function post_image(id) {
         </div>
         <div>
           <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
-            :data-bs-target="`#image_intake${props.data.pm_rating_id}`">+</button>
+            :data-bs-target="`#image_intake${props.data.pm_rating_id}`">Add Image</button>
 
           <div class="modal fade" :id="`image_intake${props.data.pm_rating_id}`" tabindex="-1" aria-hidden="true">
             <div class="modal-dialog">

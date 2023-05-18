@@ -7,7 +7,7 @@ import Filters from '@comp/SearchFilterCard.vue';
     <div class="col-9">
       <div id="search" class="d-flex flex-wrap justify-content-center">
         <div class="p-1 flex-grow-1">
-          <input class="form-control" type="search" :placeholder="`Address, Name, Firm or ZIP`" />
+          <input class="form-control" type="search" name="query" :placeholder="`Address, Name, Firm or ZIP`" />
         </div>
         <div class="p-1">
           <button class="btn btn-outline-secondary me-2" data-bs-toggle="collapse" data-bs-target="#filters"

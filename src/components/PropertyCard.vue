@@ -14,11 +14,11 @@
 -->
 
 <script setup>
-import { ref } from 'vue'
 
 defineProps({
   data: Object
 })
+
 </script>
 
 <template>
