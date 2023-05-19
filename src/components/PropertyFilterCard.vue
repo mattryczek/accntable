@@ -138,6 +138,7 @@
         <div class="d-flex">
             <div class="col-8">
                 Transit Distance
+                <span title="Distance to train or public transportation in miles">❓</span>
             </div>
             <input class="form-control form-control-sm" type="text" placeholder="mi.">
         </div>
@@ -148,6 +149,7 @@
         <div class="d-flex">
             <div class="col-8">
                 POI Distance
+                <span title="Distance to points of interest such as grocers and malls.">❓</span>
             </div>
             <input class="form-control form-control-sm" type="text" placeholder="mi.">
         </div>
