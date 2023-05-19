@@ -6,8 +6,12 @@ import Filters from '@comp/PropertyFilterCard.vue'
 
 import { supabase } from '@/supabase'
 
-import propData from '@/assets/json/properties.json'
-const properties = propData.properties
+let { data: properties, error } = await supabase
+  .from('property')
+  .select()
+  .limit(5)
+  .order('created_at', {ascending: false})
+
 </script>
 
 <template>
@@ -22,7 +26,7 @@ const properties = propData.properties
       <div class="col-9">
         <div class="row row-cols-1">
           <!-- row-cols-1 row-cols-lg-3 row-cols-md-2 row-cols-sm-1 -->
-          <PropertyCard class="mb-2" v-for="property in properties" :key="property.id" :data="property" />
+          <PropertyCard class="mb-2" v-for="property in properties" :key="property.property_id" :data="property" />
         </div>
       </div>
     </div>

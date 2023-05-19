@@ -1,37 +1,28 @@
-<!-- 
-    JSON Index for Property Object
-
-    address1: String,
-    address2: String,
-    city: String,
-    manager: String,
-    phone: String,
-    propertyID: Number,
-    state: String,
-    zip: String,
-    photoURL: String
-
--->
-
 <script setup>
+import { supabase } from '@/supabase'
 
-defineProps({
+const props = defineProps({
   data: Object
 })
+
+let { data: manager, error } = await supabase
+  .from('property_manager')
+  .select('business_name')
+  .eq('prop_manager_id', props.data.prop_manager_id)
 
 </script>
 
 <template>
   <div class="col">
-    <RouterLink :to="`/property/${data.propertyID}`" class="nav-link">
+    <RouterLink :to="`/property/${data.property_id}`" class="nav-link">
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">
-            {{ data.address1 }}
-            <span class="badge text-bg-light">{{ data.address2 }}</span>
+            {{ data.address_ln1 }}
+            <span class="badge text-bg-light">{{ data.address_ln2 }}</span>
           </h5>
           <h6 class="card-subtitle mb-2 text-body-secondary"></h6>
-          <p class="card-text">Managed by {{ data.manager }}</p>
+          <p class="card-text">Managed by {{ manager[0].business_name }}</p>
         </div>
         <div class="card-footer">
           <small class="text-body-secondary"> {{ data.city + ', ' + data.state }}</small>

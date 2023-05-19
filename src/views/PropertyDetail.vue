@@ -1,36 +1,29 @@
-<!-- 
-    JSON Index for Property Object
-
-    address1: String,
-    address2: String,
-    city: String,
-    manager: String,
-    phone: String,
-    propertyID: Number,
-    state: String,
-    zip: String,
-    photoURL: String
-
--->
-
 <script setup>
 // https://stackoverflow.com/a/74286664
 import { useRoute } from 'vue-router'
-import { ref } from 'vue'
+
+import { supabase } from '@/supabase'
 
 import Navbar from '@comp/Navbar.vue'
 import ReviewCard from '@comp/PropertyReviewCard.vue'
 import Footer from '@comp/Footer.vue'
 
-import propData from '@/assets/json/properties.json'
-import reviewData from '@/assets/json/reviews.json'
-
 const route = useRoute()
-const properties = propData.properties
-const reviews = reviewData.reviews
 
-let current = properties.find((el) => el.propertyID === route.params.id)
-let photoURL = ref(current.photoURL)
+let { data: property_info, error } = await supabase
+  .from('property')
+  .select()
+  .eq('property_id', route.params.id)
+
+property_info = property_info[0]
+
+console.log(property_info)
+
+let { data: property_char, error2 } = await supabase
+  .from('property_characteristics')
+  .select()
+  .eq('property_id', route.params.id)
+
 </script>
 
 <template>
@@ -38,8 +31,8 @@ let photoURL = ref(current.photoURL)
   <div class="container">
     <div class="row">
       <div class="col">
-        <h1>{{ current.address1 }}</h1>
-        <h5 class="text-muted fw-lighter">{{ current.address2 }}</h5>
+        <h1>{{ property_info.address_ln1 }}</h1>
+        <h5 class="text-muted fw-lighter">{{  }}</h5>
       </div>
 
       <div class="col">
