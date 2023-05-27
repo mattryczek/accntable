@@ -57,13 +57,13 @@ async function post_data(data) {
 <template>
     <Navbar />
     <div class="container">
-        <div class="row">
-            <div class="col">
+        <div class="d-flex flex-wrap">
+            <div class="flex-grow-1 mb-3 col-6" style="max-width: 50%;">
                 <h1>{{ current.first_name + ' ' + current.last_name }}</h1>
                 <h5 class="text-muted fw-lighter">{{ current.email }}</h5>
             </div>
 
-            <div class="col">
+            <div class="flex-grow-1" style="min-width: 50%;">
                 <ScoreCard :key="current.tenant_id" :data="avg_ratings[0]" />
             </div>
         </div>
@@ -107,5 +107,3 @@ async function post_data(data) {
 
     </div>
 </template>
-
-<style></style>
