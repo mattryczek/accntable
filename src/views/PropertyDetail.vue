@@ -6,7 +6,6 @@ import { supabase } from '@/supabase'
 
 import Navbar from '@comp/Navbar.vue'
 import ReviewCard from '@comp/PropertyReviewCard.vue'
-import Footer from '@comp/Footer.vue'
 
 const route = useRoute()
 
@@ -32,7 +31,7 @@ let { data: property_char, error2 } = await supabase
     <div class="row">
       <div class="col">
         <h1>{{ property_info.address_ln1 }}</h1>
-        <h5 class="text-muted fw-lighter">{{  }}</h5>
+        <h5 class="text-muted fw-lighter">{{ }}</h5>
       </div>
 
       <div class="col">
@@ -45,7 +44,6 @@ let { data: property_char, error2 } = await supabase
     <h3 class="border-bottom mb-3">Reviews for this Property</h3>
     <ReviewCard v-for="review in reviews" :key="review.id" :data="review" />
   </div>
-  <Footer />
 </template>
 
 <style></style>

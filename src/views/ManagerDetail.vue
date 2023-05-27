@@ -9,7 +9,6 @@ import Navbar from '@comp/Navbar.vue'
 import ReviewCard from '@comp/ManagerReviewCard.vue'
 import ScoreCard from '@comp/ManagerScoreCard.vue'
 import ReviewForm from '@comp/ManagerReviewform.vue'
-import Footer from '@comp/Footer.vue'
 
 // External imports
 import { supabase } from '@/supabase'
@@ -80,7 +79,6 @@ async function post_data(data) {
     <h3 class="border-bottom mb-3">Reviews for this Property Manager</h3>
     <ReviewCard v-for="review in reviews" :key="review.pm_rating_id" :data="review" />
   </div>
-  <Footer />
 </template>
 
 <style></style>
