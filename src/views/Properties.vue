@@ -11,6 +11,8 @@ let { data: properties, error } = await supabase
   .select()
   .order('created_at', { ascending: false })
 
+const empty = ref(false)
+
 // Filter Refs
 const beds_min = ref(1)
 const beds_max = ref(5)
@@ -67,6 +69,9 @@ const filtered_ref = computed(() => {
 
   result = result.filter((p) => p.gym === gym.value)
   result = result.filter((p) => p.pets === pets.value)
+
+  // Render results found/not found blurb
+  result.length === 0 ? empty.value = true : empty.value = false
 
   return result
 })
@@ -296,6 +301,10 @@ const filtered_ref = computed(() => {
       <div class="col-9">
         <div class="row row-cols-1">
           <!-- row-cols-1 row-cols-lg-3 row-cols-md-2 row-cols-sm-1 -->
+          <div v-if="empty">
+            <h1 class="display-6 fs-1">No results found!</h1>
+            <p>Try adjusting your filters to show properties of interest</p>
+          </div>
           <PropertyCard class="mb-2" v-for="property in filtered_ref" :key="property.property_id" :data="property" />
         </div>
       </div>
