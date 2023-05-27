@@ -72,7 +72,7 @@ const filtered_ref = computed(() => {
   result = result.filter((p) => p.gym === gym.value)
   result = result.filter((p) => p.pets === pets.value)
 
-  // Render results found/not found blurb
+  // Render results found/not found div
   result.length === 0 ? empty.value = true : empty.value = false
 
   return result

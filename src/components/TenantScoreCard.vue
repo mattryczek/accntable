@@ -56,7 +56,7 @@ function transform(number) {
                 <p class="card-text">
                     Number of times Reported
                     <br />
-                    <span>{{ ratings.communication }}</span>
+                    <span>{{ ratings.reportcount }}</span>
                 </p>
             </div>
         </div>
