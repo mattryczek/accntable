@@ -7,7 +7,7 @@ const props = defineProps({
 </script>
 
 <template>
-    <div class="mb-2" >
+    <div class="mb-3" >
         <h6> {{ label }}</h6>
 
         <input type="radio" value="1" class="btn-check" :name="`${internal}`" :id="`${label}-option1`">
