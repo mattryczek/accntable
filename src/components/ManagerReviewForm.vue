@@ -13,6 +13,10 @@ function formOnSubmit(e) {
     e.target.reset()
 }
 
+function clear_form() {
+    document.getElementById("review_form").reset();
+}
+
 </script>
 
 <template>
@@ -20,7 +24,7 @@ function formOnSubmit(e) {
         <div class="card-body">
             <h5 class="card-title mb-2">Submit a Review</h5>
 
-            <form  @submit.prevent="formOnSubmit">
+            <form @submit.prevent="formOnSubmit" id="review_form">
                 <div class="row">
                     <div class="col">
                         <div class="form-floating mb-3">
@@ -29,8 +33,8 @@ function formOnSubmit(e) {
                         </div>
 
                         <div class="form-floating">
-                            <textarea name="notes" rows="6" style="height:100%;" class="form-control" placeholder="Leave a comment here"
-                                id="floatingTextarea"></textarea>
+                            <textarea name="notes" rows="6" style="height:100%;" class="form-control"
+                                placeholder="Leave a comment here" id="floatingTextarea"></textarea>
                             <label for="floatingTextarea">Comments</label>
                         </div>
                     </div>
@@ -39,12 +43,15 @@ function formOnSubmit(e) {
                             <InlineRadio :label="`Responsiveness`" :internal="`timeliness_responsiveness`" />
                             <InlineRadio :label="`Friendliness`" :internal="`friendliness`" />
                             <InlineRadio :label="`Management`" :internal="`management_abilities`" />
-                            <button class="btn btn-primary mt-4">Submit</button>
                         </div>
                         <div class="col">
                             <InlineRadio :label="`Maintenance`" :internal="`maintenance`" />
                             <InlineRadio :label="`Rental Rate`" :internal="`reasonable_rate`" />
                             <InlineRadio :label="`Communication`" :internal="`communication`" />
+                            <div class="mt-3">
+                                <button type="submit" class="btn btn-primary me-2">Submit</button>
+                                <button @click.prevent="clear_form" class="btn btn-outline-danger">Clear</button>
+                            </div>
                         </div>
 
                     </div>
