@@ -25,8 +25,8 @@ function clear_form() {
             <h5 class="card-title mb-2">Submit a Review</h5>
 
             <form @submit.prevent="formOnSubmit" id="review_form">
-                <div class="row">
-                    <div class="col">
+                <div class="d-flex flex-wrap">
+                    <div class="flex-grow-1 col-6 mb-2 me-2">
                         <div class="form-floating mb-3">
                             <input name="author" type="text" class="form-control" placeholder="Enter Your Name">
                             <label for="floatingInput">Enter Your Name</label>
@@ -38,13 +38,13 @@ function clear_form() {
                             <label for="floatingTextarea">Comments</label>
                         </div>
                     </div>
-                    <div class="row col">
-                        <div class="col">
+                    <div class="row flex-grow-1 d-flex">
+                        <div class="col-md-6">
                             <InlineRadio :label="`Responsiveness`" :internal="`timeliness_responsiveness`" />
                             <InlineRadio :label="`Friendliness`" :internal="`friendliness`" />
                             <InlineRadio :label="`Management`" :internal="`management_abilities`" />
                         </div>
-                        <div class="col">
+                        <div class="col-md-6">
                             <InlineRadio :label="`Maintenance`" :internal="`maintenance`" />
                             <InlineRadio :label="`Rental Rate`" :internal="`reasonable_rate`" />
                             <InlineRadio :label="`Communication`" :internal="`communication`" />
