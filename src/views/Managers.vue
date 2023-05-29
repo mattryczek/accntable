@@ -25,7 +25,7 @@ const communication = ref("1")
 
 const filtered = computed(() => {
 
-  // Empty array of matching properties to start
+  // Empty array of matching PMs to start
   let result;
 
   result = managers.filter(e => e.timeliness_responsiveness >= responsiveness.value)
@@ -57,11 +57,11 @@ const filtered = computed(() => {
         <div class="overflow-scroll px-1" id="filters">
 
           <Stars v-model="responsiveness" :label="`Responsiveness`" />
-          <Stars v-model="friendliness" :label="`Friendliness`" />
-          <Stars v-model="management" :label="`Management`" />
-          <Stars v-model="maintenance" :label="`Maintenance`" />
-          <Stars v-model="rent" :label="`Rent Rate`" />
-          <Stars v-model="communication" :label="`Communication`" />
+          <Stars v-model="friendliness"   :label="`Friendliness`" />
+          <Stars v-model="management"     :label="`Management`" />
+          <Stars v-model="maintenance"    :label="`Maintenance`" />
+          <Stars v-model="rent"           :label="`Rent Fairness`" />
+          <Stars v-model="communication"  :label="`Communication`" />
 
         </div>
       </div>

@@ -23,7 +23,7 @@ const props = defineProps({
                 min="1"
                 max="5" 
                 oninput="this.style.setProperty('--value', `${this.valueAsNumber}`)" 
-                step="1" 
+                step="0.5" 
                 type="range">
         </label>
     </div>
