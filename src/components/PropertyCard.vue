@@ -15,7 +15,7 @@ const props = defineProps({
 <template>
   <div class="col">
     <RouterLink :to="`/property/${data.property_id}`" class="nav-link">
-      <div class="card">
+      <div class="card shadow-sm">
         <div class="card-body">
           <h5 class="card-title">
             {{ data.address_ln1 }}
