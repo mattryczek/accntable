@@ -3,6 +3,7 @@ import { ref, computed } from 'vue'
 
 import Navbar from '@comp/Navbar.vue'
 import ManagerCard from '@comp/ManagerCard.vue'
+import Stars from '@comp/StarRating.vue'
 
 import { supabase } from '@/supabase'
 import { main } from '@popperjs/core';
@@ -15,12 +16,12 @@ let { data: managers, error } = await supabase
 
 const empty = ref(false)
 
-const responsiveness = ref(0)
-const friendliness = ref(0)
-const management = ref(0)
-const maintenance = ref(0)
-const rent = ref(0)
-const communication = ref(0)
+const responsiveness = ref("1")
+const friendliness = ref("1")
+const management = ref("1")
+const maintenance = ref("1")
+const rent = ref("1")
+const communication = ref("1")
 
 const filtered = computed(() => {
 
@@ -55,77 +56,12 @@ const filtered = computed(() => {
         <h1 class="display-6 fs-1">Filters</h1>
         <div class="overflow-scroll px-1" id="filters">
 
-          <!-- Responsiveness -->
-          <div class="d-flex">
-            <div class="me-auto">
-              Responsiveness
-            </div>
-
-            <input type="number" v-model="responsiveness" class="form-control form-control-sm flex-fill ms-4">
-
-          </div>
-          <hr>
-          <!-- End Responsiveness -->
-
-          <!-- Friendliness -->
-          <div class="d-flex">
-            <div class="me-auto">
-              Friendliness
-            </div>
-
-            <input type="number" v-model="friendliness" class="col-6 form-control form-control-sm flex-fill ms-4">
-
-          </div>
-          <hr>
-          <!-- End Friendliness -->
-
-          <!-- Management -->
-          <div class="d-flex">
-            <div class="me-auto">
-              Management
-            </div>
-
-            <input type="number" v-model="management" class="form-control form-control-sm flex-fill ms-4">
-
-          </div>
-          <hr>
-          <!-- End Management -->
-
-          <!-- Maintenance -->
-          <div class="d-flex">
-            <div class="me-auto">
-              Maintenance
-            </div>
-
-            <input type="number" v-model="maintenance" class="form-control form-control-sm flex-fill ms-4">
-
-          </div>
-          <hr>
-          <!-- End Maintenance -->
-
-          <!-- Rent -->
-          <div class="d-flex">
-            <div class="me-auto">
-              Rent
-            </div>
-
-            <input type="number" v-model="rent" class="form-control form-control-sm flex-fill ms-4">
-
-          </div>
-          <hr>
-          <!-- End Rent -->
-
-          <!-- Communication -->
-          <div class="d-flex">
-            <div class="me-auto">
-              Communication
-            </div>
-
-            <input type="number" v-model="communication" class="form-control form-control-sm flex-fill ms-4">
-
-          </div>
-          <hr>
-          <!-- End Communication -->
+          <Stars v-model="responsiveness" :label="`Responsiveness`" />
+          <Stars v-model="friendliness" :label="`Friendliness`" />
+          <Stars v-model="management" :label="`Management`" />
+          <Stars v-model="maintenance" :label="`Maintenance`" />
+          <Stars v-model="rent" :label="`Rent Rate`" />
+          <Stars v-model="communication" :label="`Communication`" />
 
         </div>
       </div>
