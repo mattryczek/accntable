@@ -1,7 +1,6 @@
 <!-- https://dev.to/madsstoumann/star-rating-using-a-single-input-i0l -->
 
 <script setup>
-// defineProps(['modelValue'])
 defineEmits(['update:modelValue'])
 
 const props = defineProps({

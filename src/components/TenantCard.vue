@@ -16,10 +16,10 @@ let props = defineProps({
   data: Object
 })
 
-let { data: rating, error } = await supabase
-  .from('tenant_ratings')
-  .select()
-  .eq('tenant_id', props.data.tenant_id)
+// let { data: rating, error } = await supabase
+//   .from('tenant_ratings')
+//   .select()
+//   .eq('tenant_id', props.data.tenant_id)
 
 </script>
 
@@ -29,7 +29,7 @@ let { data: rating, error } = await supabase
       <div class="card-body">
         <h5 class="card-title">{{ data.first_name + ' ' + data.last_name }}</h5>
         <pre class="card-text">{{ data.email }}</pre>
-        <h6>{{ rating[0].cleanliness | 'No rating!' }}</h6>
+        <h6> MEOW </h6>
       </div>
     </div>
   </RouterLink>
