@@ -58,32 +58,37 @@ let parking_info = property_info.parking_covered ? `Covered, ${property_info.par
 
     <div class="mt-4 d-flex flex-wrap">
 
-      <div class="d-flex flex-wrap flex-grow-1 mb-4">
+      <div class="me-4">
         <h3 style="width: 100%">Lease Details</h3>
-        <Card :title="`Rent`" :content="`$${rent}`" />
-        <Card :title="`Bedrooms`" :content="property_info.bedrooms.toString()" />
-        <Card :title="`Bathrooms`" :content="property_info.baths.toString()" />
+        <div class="d-flex flex-wrap mb-4">
+          <Card :title="`Rent`" :content="`$${rent}`" />
+          <Card :title="`Bedrooms`" :content="property_info.bedrooms.toString()" />
+          <Card :title="`Bathrooms`" :content="property_info.baths.toString()" />
+        </div>
       </div>
 
-      <div class="d-flex flex-wrap flex-grow-1 mb-4">
+      <div class="me-4">
         <h3 style="width: 100%">Amenities</h3>
-        <Card :title="property_info.laundry" :content="`🧺`" />
-        <Card v-if="property_info.parking_spot" :title="parking_info" :content="`🅿️`" />
-        <Card v-if="property_info.gym" :title="`Gym`" :content="`👟`" />
-        <Card v-if="property_info.pets" :title="`Pet Friendly`" :content="`🐈`" />
+        <div class="d-flex flex-wrap mb-4">
+          <Card :title="property_info.laundry" :content="`🧺`" />
+          <Card v-if="property_info.parking_spot" :title="parking_info" :content="`🅿️`" />
+          <Card v-if="property_info.gym" :title="`Gym`" :content="`👟`" />
+          <Card v-if="property_info.pets" :title="`Pet Friendly`" :content="`🐈`" />
+        </div>
       </div>
 
-      <div class="d-flex flex-wrap flex-grow-1">
+      <div class="me-4">
         <h3 style="width: 100%">Property Details</h3>
-        <Card :title="`Transit`" :content="`${property_info.transit_walking} mi.`" />
-        <Card :title="`POI`" :content="`${property_info.poi_walking} mi.`" />
-        <Card :title="`Violations`" :content="`${property_info.violations === null ? '0' : property_info.violations}`" />
-        <Card :title="`Bedbugs`" :content="`${property_info.bed_bugs === null ? '0' : property_info.bed_bugs}`" />
-
+        <div class="d-flex flex-wrap mb-4">
+          <Card :title="`Transit`" :content="`${property_info.transit_walking} mi.`" />
+          <Card :title="`POI`" :content="`${property_info.poi_walking} mi.`" />
+          <Card :title="`Violations`"
+            :content="`${property_info.violations === null ? '0' : property_info.violations}`" />
+          <Card :title="`Bedbugs`" :content="`${property_info.bed_bugs === null ? '0' : property_info.bed_bugs}`" />
+        </div>
       </div>
 
     </div>
-
   </div>
 
   <div class="container mt-4">
