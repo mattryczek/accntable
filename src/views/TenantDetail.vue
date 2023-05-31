@@ -45,8 +45,6 @@ async function post_data(data) {
   data['tenant_id'] = route.params.id
   data['created_at'] = new Date().toISOString()
 
-  console.log(data)
-
   const { error } = await supabase.from('tenant_ratings').insert(data)
 
   reviews.value.unshift({
