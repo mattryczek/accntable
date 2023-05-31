@@ -68,7 +68,7 @@ const filtered = computed(() => {
       <div class="col-9">
         <div v-if="empty">
           <h1 class="display-6 fs-1">No results found!</h1>
-          <p>Try relaxing your filters to show more property managers.</p>
+          <p>Try relaxing your filters to show more tenants.</p>
         </div>
         <TenantCard v-for="tenant in filtered" :key="tenant.tenant_id" :data="tenant" />
       </div>

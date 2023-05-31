@@ -15,8 +15,12 @@ const props = defineProps({
         </div>
 
         <div class="col-4">
-            <input :value="modelValue" @input="$emit('update:modelValue', $event.target.value)"
-                class="form-control form-control-sm" type="number">
+            <input 
+                :value="modelValue" 
+                @input="$emit('update:modelValue', $event.target.value)"
+                class="form-control form-control-sm" 
+                type="number"
+                >
         </div>
     </div>
     <hr>
