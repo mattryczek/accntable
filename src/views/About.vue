@@ -43,5 +43,3 @@ import Footer from '@comp/Footer.vue'
   </div>
   <Footer />
 </template>
-
-<style></style>
