@@ -9,7 +9,6 @@ import Navbar from '@comp/Navbar.vue'
 import ReviewCard from '@comp/TenantReviewCard.vue'
 import ScoreCard from '@comp/TenantScoreCard.vue'
 import ReviewForm from '@comp/TenantReviewform.vue'
-import Footer from '@comp/Footer.vue'
 
 // External imports
 import { supabase } from '@/supabase'
@@ -30,6 +29,12 @@ let { data: reviews_raw, error2 } = await supabase
     .order('created_at', {ascending: false})
 
 const reviews = ref(reviews_raw)
+
+let { data: reviews_written, error4 } = await supabase
+    .from('tenant_ratings')
+    .select('tenant_rating_id, notes, author, created_at, thumbs_up, thumbs_down')
+    .eq('tenant_id', route.params.id)
+    .order('created_at', {ascending: false})
 
 let { data: avg_ratings, error3 } = await supabase
     .from('ten_average_rating')
@@ -99,12 +104,11 @@ async function post_data(data) {
                     data-bs-parent="#accordionExample">
                     <div class="accordion-body">
                         <div id="reviews" class="container mt-4">
-                            <!-- <ReviewCard v-for="review in reviews" :key="review.id" :data="review" /> -->
+                            <ReviewCard v-for="review in reviews" :key="review.tenant_rating_id" :data="review" />
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <Footer />
 </template>
