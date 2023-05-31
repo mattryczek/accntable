@@ -8,7 +8,7 @@ import { ref } from 'vue'
 import Navbar from '@comp/Navbar.vue'
 import ReviewCard from '@comp/TenantReviewCard.vue'
 import ScoreCard from '@comp/TenantScoreCard.vue'
-import ReviewForm from '@comp/TenantReviewform.vue'
+import ReviewForm from '@comp/TenantReviewForm.vue'
 
 // External imports
 import { supabase } from '@/supabase'
