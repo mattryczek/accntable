@@ -86,7 +86,7 @@ async function post_data(data) {
       <h2 class="accordion-header">
         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
           aria-expanded="true" aria-controls="collapseOne">
-          <h5 style="margin-bottom: 0px;">More Properties from this Manager</h5>
+          <h5 style="margin-bottom: 0px;">Properties from this Manager</h5>
         </button>
       </h2>
       <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">

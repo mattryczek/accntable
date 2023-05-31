@@ -26,7 +26,7 @@ const parking_max = ref(5)
 const rent_min = ref(0)
 const rent_max = ref(4500)
 
-const laundry = ref('In-Unit')
+const laundry = ref('In Unit')
 const lease = ref('Annual')
 
 const transit_dist = ref(15)

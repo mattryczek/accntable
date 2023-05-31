@@ -43,7 +43,7 @@ const rent = property_info.rent.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
         <h1>{{ property_info.address_ln1 }}</h1>
         <h4 class="fw-light">{{ property_info.city + ', ' + property_info.state + ' ' + property_info.zip }}</h4>
         <h5 class="fw-light">
-          Lease Term: <span class="badge rounded-pill text-bg-secondary">{{ property_info.lease_time_frame }}</span>
+          Lease Term: <span class="badge rounded-pill text-bg-success">{{ property_info.lease_time_frame }}</span>
         </h5>
         <h5 class="text-muted fw-lighter">Managed by {{ manager.business_name }}</h5>
       </div>
@@ -55,25 +55,30 @@ const rent = property_info.rent.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
 
 
     <div class="mt-4 d-flex flex-wrap">
-      <div class="d-flex flex-wrap flex-grow-1">
-        <h3 style="width: 100%">Property Details</h3>
+      <div class="d-flex flex-wrap flex-grow-1 mb-4">
+        <h3 style="width: 100%">Lease Details</h3>
         <Card :title="`Rent`" :content="`$${rent}`" />
         <Card :title="`Bedrooms`" :content="property_info.bedrooms.toString()" />
         <Card :title="`Bathrooms`" :content="property_info.baths.toString()" />
-        <Card :title="`Transit`" :content="`${property_info.transit_walking} mi.`" />
-        <Card :title="`POI`" :content="`${property_info.poi_walking} mi.`" />
-
       </div>
 
-      <div class="d-flex flex-wrap mt-4 flex-grow-1">
+      <div class="d-flex flex-wrap flex-grow-1">
         <h3 style="width: 100%">Amenities</h3>
         <Card v-if="property_info.parking_spot" :title="`Parking`" :content="`🅿️`" />
         <Card v-if="property_info.gym" :title="`Gym`" :content="`👟`" />
         <Card v-if="property_info.pets" :title="`Pet Friendly`" :content="`🐈`" />
         <Card :title="property_info.laundry" :content="`🧺`" />
+      </div>
 
+      <div class="d-flex flex-wrap flex-grow-1">
+        <h3 style="width: 100%">Property Details</h3>
+        <Card :title="`Transit`" :content="`${property_info.transit_walking} mi.`" />
+        <Card :title="`POI`" :content="`${property_info.poi_walking} mi.`" />
+        <Card :title="`Violations`" :content="`${property_info.violations === null ? '0' : property_info.violations}`" />
+        <Card :title="`Bedbugs`" :content="`${property_info.bed_bugs === null ? '0' : property_info.bed_bugs}`" />
 
       </div>
+
     </div>
 
   </div>
