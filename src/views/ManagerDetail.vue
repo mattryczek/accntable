@@ -38,7 +38,7 @@ let { data: avg_ratings, error3 } = await supabase
   .eq('prop_manager_id', route.params.id)
 
 let { data: properties, error4 } = await supabase
-  .from('property')
+  .from('property_char_view')
   .select()
   .eq('prop_manager_id', route.params.id)
 
@@ -63,7 +63,7 @@ async function post_data(data) {
   <Navbar />
   <div class="container mb-4">
     <div class="d-flex flex-wrap">
-      <div class="flex-grow-1 mb-3 col-6" style="max-width: 50$;">
+      <div class="flex-grow-1 mb-3 col-6" style="max-width: 50%;">
         <h1>{{ current.business_name }}</h1>
         <h5 class="text-muted fw-lighter">{{ current.address_ln1 }}</h5>
         <h5 class="text-muted fw-lighter">
@@ -91,8 +91,7 @@ async function post_data(data) {
       </h2>
       <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
         <div class="accordion-body">
-          <PropertyCard class="mb-2" style="max-width: 25rem;" v-for="property in properties" :key="property.property_id"
-            :data="property" />
+          <PropertyCard class="mb-2" style="max-width: 17rem;" v-for="property in properties" :key="property.property_id" :data="property" />
         </div>
       </div>
     </div>

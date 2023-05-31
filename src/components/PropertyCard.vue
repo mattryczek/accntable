@@ -11,10 +11,10 @@ const rent = props.data.rent.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
 </script>
 
 <template>
-  <RouterLink :to="`/property/${data.property_id}`" class="nav-link">
-    <div class="card shadow-sm" style="width: 18rem;">
-      <img :src="data.image_url" class="card-img-top">
-      <div class="card-body">
+  <div class="card shadow-sm h-100" style="max-width: 20rem;">
+    <img :src="data.image_url" class="card-img-top" style="max-width: 300px">
+    <div class="card-body">
+        <RouterLink :to="`/property/${data.property_id}`" class="nav-link stretched-link"></RouterLink>
         <h5 class="card-title">{{ data.address_ln1 }}</h5>
         <h5 class="card-text fw-light">{{ data.city + ', ' + data.state + ' ' + data.zip }}</h5>
 
@@ -25,5 +25,4 @@ const rent = props.data.rent.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
         </div>
       </div>
     </div>
-  </RouterLink>
 </template>
