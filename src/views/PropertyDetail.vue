@@ -31,6 +31,8 @@ let { data: reviews, error3 } = await supabase
 
 const rent = property_info.rent.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
 
+let parking_info = property_info.parking_covered ? `Covered, ${property_info.parking_spots}` : `Not Covered, ${property_info.parking_spots}`
+
 </script>
 
 <template>
@@ -55,6 +57,7 @@ const rent = property_info.rent.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
 
 
     <div class="mt-4 d-flex flex-wrap">
+
       <div class="d-flex flex-wrap flex-grow-1 mb-4">
         <h3 style="width: 100%">Lease Details</h3>
         <Card :title="`Rent`" :content="`$${rent}`" />
@@ -62,12 +65,12 @@ const rent = property_info.rent.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
         <Card :title="`Bathrooms`" :content="property_info.baths.toString()" />
       </div>
 
-      <div class="d-flex flex-wrap flex-grow-1">
+      <div class="d-flex flex-wrap flex-grow-1 mb-4">
         <h3 style="width: 100%">Amenities</h3>
-        <Card v-if="property_info.parking_spot" :title="`Parking`" :content="`🅿️`" />
+        <Card :title="property_info.laundry" :content="`🧺`" />
+        <Card v-if="property_info.parking_spot" :title="parking_info" :content="`🅿️`" />
         <Card v-if="property_info.gym" :title="`Gym`" :content="`👟`" />
         <Card v-if="property_info.pets" :title="`Pet Friendly`" :content="`🐈`" />
-        <Card :title="property_info.laundry" :content="`🧺`" />
       </div>
 
       <div class="d-flex flex-wrap flex-grow-1">
