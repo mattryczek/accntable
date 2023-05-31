@@ -28,4 +28,4 @@ coverage
 *.sw?
 
 # Supabase.js file cuz API key
-src/supabase.js
+# src/supabase.js
