@@ -68,16 +68,6 @@ let parking_info = property_info.parking_covered ? `Covered, ${property_info.par
       </div>
 
       <div class="me-4">
-        <h3 style="width: 100%">Amenities</h3>
-        <div class="d-flex flex-wrap mb-4">
-          <Card :title="property_info.laundry" :content="`🧺`" />
-          <Card v-if="property_info.parking_spot" :title="parking_info" :content="`🅿️`" />
-          <Card v-if="property_info.gym" :title="`Gym`" :content="`👟`" />
-          <Card v-if="property_info.pets" :title="`Pet Friendly`" :content="`🐈`" />
-        </div>
-      </div>
-
-      <div class="me-4">
         <h3 style="width: 100%">Property Details</h3>
         <div class="d-flex flex-wrap mb-4">
           <Card :title="`Transit`" :content="`${property_info.transit_walking} mi.`" />
@@ -85,6 +75,16 @@ let parking_info = property_info.parking_covered ? `Covered, ${property_info.par
           <Card :title="`Violations`"
             :content="`${property_info.violations === null ? '0' : property_info.violations}`" />
           <Card :title="`Bedbugs`" :content="`${property_info.bed_bugs === null ? '0' : property_info.bed_bugs}`" />
+        </div>
+      </div>
+
+      <div class="me-4">
+        <h3 style="width: 100%">Amenities</h3>
+        <div class="d-flex flex-wrap mb-4">
+          <Card :title="property_info.laundry" :content="`🧺`" />
+          <Card v-if="property_info.parking_spot" :title="parking_info" :content="`🅿️`" />
+          <Card v-if="property_info.gym" :title="`Gym`" :content="`👟`" />
+          <Card v-if="property_info.pets" :title="`Pet Friendly`" :content="`🐈`" />
         </div>
       </div>
 
