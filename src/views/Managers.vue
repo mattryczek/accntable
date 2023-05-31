@@ -70,7 +70,9 @@ const filtered = computed(() => {
           <h1 class="display-6 fs-1">No results found!</h1>
           <p>Try relaxing your filters to show more property managers.</p>
         </div>
-        <ManagerCard v-for="manager in filtered" :key="manager.prop_manager_id" :data="manager" />
+        <div class="d-flex flex-wrap">
+          <ManagerCard class="me-2 mb-2" v-for="manager in filtered" :key="manager.prop_manager_id" :data="manager" />
+        </div>
       </div>
     </div>
   </div>

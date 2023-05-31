@@ -1,25 +1,9 @@
-<!-- 
-created_at: 
-email:
-first_name:
-last_name:
-phone:
-tenant_id:
-updated_at: null
-user_id: null
--->
-
 <script setup>
-import { supabase } from '@/supabase'
+import Stars from '@comp/StarDisplay.vue'
 
 let props = defineProps({
   data: Object
 })
-
-// let { data: rating, error } = await supabase
-//   .from('tenant_ratings')
-//   .select()
-//   .eq('tenant_id', props.data.tenant_id)
 
 </script>
 
@@ -28,8 +12,18 @@ let props = defineProps({
     <div class="card my-2 shadow-sm">
       <div class="card-body">
         <h5 class="card-title">{{ data.first_name + ' ' + data.last_name }}</h5>
-        <pre class="card-text">{{ data.email }}</pre>
-        <h6> MEOW </h6>
+        <Stars :star_count="data.overall_rating" />
+        <pre class="card-text mt-2" style="margin-bottom: 0rem;">{{ data.previous_address_ln1
+          + ' '
+          + data.previous_address_ln2
+          + '\n'
+          + data.previous_city
+          + ( data.previous_address_ln1 === ''? 'No Previous Address' : ', ' )
+          + data.previous_state
+          + ' '
+          + data.previous_zip }}
+          </pre>
+
       </div>
     </div>
   </RouterLink>

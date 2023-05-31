@@ -62,11 +62,11 @@ const filtered_ref = computed(() => {
   result = result.filter((p) => p.transit_walking <= transit_dist.value)
   result = result.filter((p) => p.poi_walking <= poi_dist.value)
 
-  // TODO violations
-  // result = result.filter((p) => p.transit_walking <= violations.value)
+  // Violations
+  result = result.filter((p) => p.violations <= violations.value)
 
-  //TODO bedbugs
-  // result = result.filter((p) => p.transit_walking <= violations.value)
+  // Bedbugs
+  result = result.filter((p) => p.bed_bugs <= bedbugs.value)
 
   // Toggles
   result = result.filter((p) => p.gym === gym.value)
@@ -208,8 +208,8 @@ const filtered_ref = computed(() => {
             <select v-model="laundry" class="form-select form-select-sm flex-fill ms-4"
               aria-label=".form-select-sm example">
               <option></option>
-              <option value="In-Unit">In-Unit</option>
-              <option value="On Prem">On Prem</option>
+              <option value="In Unit">In Unit</option>
+              <option value="Onsite">Onsite</option>
             </select>
           </div>
           <hr>

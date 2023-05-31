@@ -11,7 +11,7 @@ import { supabase } from '@/supabase'
 let { data: tenants, error } = await supabase
   .from('tenant_overall_rating')
   .select()
-  .limit(5)
+  .limit(10)
   .order('tenant_id', { ascending: true })
 
 const empty = ref(false)
@@ -70,7 +70,10 @@ const filtered = computed(() => {
           <h1 class="display-6 fs-1">No results found!</h1>
           <p>Try relaxing your filters to show more tenants.</p>
         </div>
-        <TenantCard v-for="tenant in filtered" :key="tenant.tenant_id" :data="tenant" />
+
+        <div class="d-flex flex-wrap">
+          <TenantCard class="me-2 mb-2" v-for="tenant in filtered" :key="tenant.tenant_id" :data="tenant" />
+        </div>
       </div>
     </div>
   </div>
