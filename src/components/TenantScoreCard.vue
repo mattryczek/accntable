@@ -55,7 +55,7 @@ let ratings = ratingsObj.data
 
                 </p>
                 <p class="card-text">
-                    Number of times Reported
+                    Number of Reports
                     <br />
                     <span>{{ ratings.reportcount }}</span>
                 </p>

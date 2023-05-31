@@ -1,4 +1,6 @@
 <script setup>
+import StarDisplay from '@comp/StarDisplay.vue';
+
 let ratingsObj = defineProps({
     data: Object
 })
@@ -18,34 +20,34 @@ function transform(number) {
                 <p class="card-text">
                     Responsiveness
                     <br />
-                    <span>{{ transform(ratings.timeliness_responsiveness) }}</span>
+                    <StarDisplay :star_count="ratings.timeliness_responsiveness" />
                 </p>
                 <p class="card-text">
                     Friendliness
                     <br />
-                    <span>{{ transform(ratings.friendliness) }}</span>
+                    <StarDisplay :star_count="ratings.friendliness" />
                 </p>
                 <p class="card-text">
                     Management
                     <br />
-                    <span>{{ transform(ratings.management_abilities) }}</span>
+                    <StarDisplay :star_count="ratings.management_abilities" />
                 </p>
             </div>
             <div class="col">
                 <p class="card-text">
                     Maintenance
                     <br />
-                    <span>{{ transform(ratings.maintenance) }}</span>
+                    <StarDisplay :star_count="ratings.maintenance" />
                 </p>
                 <p class="card-text">
                     Rental Rate
                     <br />
-                    <span>{{ transform(ratings.reasonable_rate) }}</span>
+                    <StarDisplay :star_count="ratings.reasonable_rate" />
                 </p>
                 <p class="card-text">
                     Communication
                     <br />
-                    <span>{{ transform(ratings.communication) }}</span>
+                    <StarDisplay :star_count="ratings.communication" />
                 </p>
             </div>
         </div>
