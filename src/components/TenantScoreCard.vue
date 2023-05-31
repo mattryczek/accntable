@@ -10,15 +10,14 @@
 -->
 
 <script setup>
+import StarDisplay from '@comp/StarDisplay.vue';
+
 let ratingsObj = defineProps({
     data: Object
 })
 
 let ratings = ratingsObj.data
 
-function transform(number) {
-    return number //'★'.repeat(number) + '☆'.repeat(5 - number)
-}
 </script>
 
 <template>
@@ -29,29 +28,31 @@ function transform(number) {
                 <p class="card-text">
                     Responsiveness
                     <br />
-                    <span>{{ transform(ratings.timeliness_responsiveness) }}</span>
+                    <StarDisplay :star_count="ratings.timeliness_responsiveness" />
                 </p>
                 <p class="card-text">
                     Friendliness
                     <br />
-                    <span>{{ transform(ratings.friendliness) }}</span>
+                    <StarDisplay :star_count="ratings.friendliness" />
                 </p>
                 <p class="card-text">
                     Cleanliness
                     <br />
-                    <span>{{ transform(ratings.cleanliness) }}</span>
+                    <StarDisplay :star_count="ratings.cleanliness" />
                 </p>
             </div>
             <div class="col">
                 <p class="card-text">
                     Communication
                     <br />
-                    <span>{{ transform(ratings.communication) }}</span>
+                    <StarDisplay :star_count="ratings.communication" />
+
                 </p>
                 <p class="card-text">
                     Property Return Condition
                     <br />
-                    <span>{{ transform(ratings.property_condition) }}</span>
+                    <StarDisplay :star_count="ratings.property_condition" />
+
                 </p>
                 <p class="card-text">
                     Number of times Reported
