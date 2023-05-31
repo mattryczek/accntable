@@ -39,9 +39,8 @@ const gym = ref(true)
 const pets = ref(false)
 
 const filtered_ref = computed(() => {
-
   // Empty array of matching properties to start
-  let result;
+  let result
 
   result = properties.filter((p) => p.bedrooms >= beds_min.value && p.bedrooms <= beds_max.value)
   result = result.filter((p) => p.baths >= baths_min.value && p.baths <= baths_max.value)
@@ -73,30 +72,31 @@ const filtered_ref = computed(() => {
   result = result.filter((p) => p.pets === pets.value)
 
   // Render results found/not found div
-  result.length === 0 ? empty.value = true : empty.value = false
+  result.length === 0 ? (empty.value = true) : (empty.value = false)
 
   return result
 })
-
 </script>
 
 <template>
   <Navbar />
   <div class="properties container mt-3">
-
     <div class="row">
       <div class="col-3">
         <h1 class="display-6 fs-1">Filters</h1>
         <div class="overflow-scroll px-1" id="filters">
-          <hr>
+          <hr />
 
           <!-- Bed -->
           <div class="container">
             <div class="row">Beds</div>
 
             <div class="row d-flex flex-nowrap mt-2">
-              <select v-model="beds_min" class="form-select form-select-sm flex-fill me-2"
-                aria-label=".form-select-sm example">
+              <select
+                v-model="beds_min"
+                class="form-select form-select-sm flex-fill me-2"
+                aria-label=".form-select-sm example"
+              >
                 <option>min</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -105,8 +105,11 @@ const filtered_ref = computed(() => {
                 <option value="5">5</option>
               </select>
 
-              <select v-model="beds_max" class="form-select form-select-sm flex-fill ms-2"
-                aria-label=".form-select-sm example">
+              <select
+                v-model="beds_max"
+                class="form-select form-select-sm flex-fill ms-2"
+                aria-label=".form-select-sm example"
+              >
                 <option>max</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -114,11 +117,9 @@ const filtered_ref = computed(() => {
                 <option value="4">4</option>
                 <option value="5">5</option>
               </select>
-
             </div>
-
           </div>
-          <hr>
+          <hr />
           <!-- End Bed -->
 
           <!-- Bath -->
@@ -126,8 +127,11 @@ const filtered_ref = computed(() => {
             <div class="row">Baths</div>
 
             <div class="row d-flex flex-nowrap mt-2">
-              <select v-model="baths_min" class="form-select form-select-sm flex-fill me-2"
-                aria-label=".form-select-sm example">
+              <select
+                v-model="baths_min"
+                class="form-select form-select-sm flex-fill me-2"
+                aria-label=".form-select-sm example"
+              >
                 <option>min</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -136,8 +140,11 @@ const filtered_ref = computed(() => {
                 <option value="5">5</option>
               </select>
 
-              <select v-model="baths_max" class="form-select form-select-sm flex-fill ms-2"
-                aria-label=".form-select-sm example">
+              <select
+                v-model="baths_max"
+                class="form-select form-select-sm flex-fill ms-2"
+                aria-label=".form-select-sm example"
+              >
                 <option>max</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -145,11 +152,9 @@ const filtered_ref = computed(() => {
                 <option value="4">4</option>
                 <option value="5">5</option>
               </select>
-
             </div>
-
           </div>
-          <hr>
+          <hr />
           <!-- End Bath -->
 
           <!-- Parking -->
@@ -157,8 +162,11 @@ const filtered_ref = computed(() => {
             <div class="row">Parking Spots</div>
 
             <div class="row d-flex flex-nowrap mt-2">
-              <select v-model="parking_min" class="form-select form-select-sm flex-fill me-2"
-                aria-label=".form-select-sm example">
+              <select
+                v-model="parking_min"
+                class="form-select form-select-sm flex-fill me-2"
+                aria-label=".form-select-sm example"
+              >
                 <option>min</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -167,8 +175,11 @@ const filtered_ref = computed(() => {
                 <option value="5">5</option>
               </select>
 
-              <select v-model="parking_max" class="form-select form-select-sm flex-fill ms-2"
-                aria-label=".form-select-sm example">
+              <select
+                v-model="parking_max"
+                class="form-select form-select-sm flex-fill ms-2"
+                aria-label=".form-select-sm example"
+              >
                 <option>max</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -176,11 +187,9 @@ const filtered_ref = computed(() => {
                 <option value="4">4</option>
                 <option value="5">5</option>
               </select>
-
             </div>
-
           </div>
-          <hr>
+          <hr />
           <!-- End Parking -->
 
           <!-- Rent -->
@@ -188,47 +197,56 @@ const filtered_ref = computed(() => {
             <div class="row">Rent</div>
 
             <div class="row d-flex flex-nowrap mt-2">
-              <input v-model.lazy="rent_min" class="flex-fill me-2 form-control form-control-sm" type="text"
-                placeholder="min">
+              <input
+                v-model.lazy="rent_min"
+                class="flex-fill me-2 form-control form-control-sm"
+                type="text"
+                placeholder="min"
+              />
 
-              <input v-model.lazy="rent_max" class="flex-fill ms-2 form-control form-control-sm" type="text"
-                placeholder="max">
+              <input
+                v-model.lazy="rent_max"
+                class="flex-fill ms-2 form-control form-control-sm"
+                type="text"
+                placeholder="max"
+              />
             </div>
-
           </div>
-          <hr>
+          <hr />
           <!-- End Rent -->
 
           <!-- Laundry -->
           <div class="d-flex">
-            <div class="me-auto">
-              Laundry
-            </div>
+            <div class="me-auto">Laundry</div>
 
-            <select v-model="laundry" class="form-select form-select-sm flex-fill ms-4"
-              aria-label=".form-select-sm example">
+            <select
+              v-model="laundry"
+              class="form-select form-select-sm flex-fill ms-4"
+              aria-label=".form-select-sm example"
+            >
               <option></option>
               <option value="In Unit">In Unit</option>
               <option value="Onsite">Onsite</option>
             </select>
           </div>
-          <hr>
+          <hr />
           <!-- End Laundry -->
 
           <!-- Lease Type -->
           <div class="d-flex">
-            <div class="me-auto">
-              Lease Type
-            </div>
+            <div class="me-auto">Lease Type</div>
 
-            <select v-model="lease" class="form-select form-select-sm flex-fill ms-4"
-              aria-label=".form-select-sm example">
+            <select
+              v-model="lease"
+              class="form-select form-select-sm flex-fill ms-4"
+              aria-label=".form-select-sm example"
+            >
               <option></option>
               <option value="Annual">Annual</option>
               <option value="Month to Month">Month to Month</option>
             </select>
           </div>
-          <hr>
+          <hr />
           <!-- End Lease -->
 
           <!-- Transit -->
@@ -237,9 +255,14 @@ const filtered_ref = computed(() => {
               Transit Distance
               <span title="Distance to train or public transportation in miles">❓</span>
             </div>
-            <input v-model.lazy="transit_dist" class="form-control form-control-sm" type="text" placeholder="mi.">
+            <input
+              v-model.lazy="transit_dist"
+              class="form-control form-control-sm"
+              type="text"
+              placeholder="mi."
+            />
           </div>
-          <hr>
+          <hr />
           <!-- End Transit -->
 
           <!-- POI -->
@@ -248,55 +271,73 @@ const filtered_ref = computed(() => {
               POI Distance
               <span title="Distance to points of interest such as grocers and malls.">❓</span>
             </div>
-            <input v-model.lazy="poi_dist" class="form-control form-control-sm" type="text" placeholder="mi.">
+            <input
+              v-model.lazy="poi_dist"
+              class="form-control form-control-sm"
+              type="text"
+              placeholder="mi."
+            />
           </div>
-          <hr>
+          <hr />
           <!-- End POI -->
 
           <!-- Violations -->
           <div class="d-flex">
-            <div class="col-8">
-              Violations
-            </div>
-            <input v-model.lazy="violations" class="form-control form-control-sm" type="text" placeholder="max">
+            <div class="col-8">Violations</div>
+            <input
+              v-model.lazy="violations"
+              class="form-control form-control-sm"
+              type="text"
+              placeholder="max"
+            />
           </div>
-          <hr>
+          <hr />
           <!-- End Violations -->
 
           <!-- Bedbugs -->
           <div class="d-flex">
-            <div class="col-8">
-              Bedbug Reports
-            </div>
-            <input v-model.lazy="bedbugs" class="form-control form-control-sm" type="text" placeholder="max">
+            <div class="col-8">Bedbug Reports</div>
+            <input
+              v-model.lazy="bedbugs"
+              class="form-control form-control-sm"
+              type="text"
+              placeholder="max"
+            />
           </div>
-          <hr>
+          <hr />
           <!-- End Bedbugs -->
 
           <!-- Gym -->
           <div class="d-flex">
-            <div class="me-auto">
-              Gym in Building
-            </div>
+            <div class="me-auto">Gym in Building</div>
             <div class="form-check form-switch me-2">
-              <input v-model="gym" class="form-check-input" type="checkbox" role="switch" id="gym_switch">
+              <input
+                v-model="gym"
+                class="form-check-input"
+                type="checkbox"
+                role="switch"
+                id="gym_switch"
+              />
             </div>
           </div>
-          <hr>
+          <hr />
           <!-- End Gym -->
 
           <!-- Pets -->
           <div class="d-flex">
-            <div class="me-auto">
-              Pets Allowed
-            </div>
+            <div class="me-auto">Pets Allowed</div>
             <div class="form-check form-switch me-2">
-              <input v-model="pets" class="form-check-input" type="checkbox" role="switch" id="gym_switch">
+              <input
+                v-model="pets"
+                class="form-check-input"
+                type="checkbox"
+                role="switch"
+                id="gym_switch"
+              />
             </div>
           </div>
-          <hr>
+          <hr />
           <!-- End Pets -->
-
         </div>
       </div>
 
@@ -306,7 +347,12 @@ const filtered_ref = computed(() => {
             <h1 class="display-6 fs-1">No results found!</h1>
             <p>Try adjusting your filters to show properties of interest.</p>
           </div>
-          <PropertyCard class="mb-2 me-2" v-for="property in filtered_ref" :key="property.property_id" :data="property" />
+          <PropertyCard
+            class="mb-2 me-2"
+            v-for="property in filtered_ref"
+            :key="property.property_id"
+            :data="property"
+          />
         </div>
       </div>
     </div>

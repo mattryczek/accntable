@@ -29,10 +29,11 @@ let { data: reviews, error3 } = await supabase
   .select('pm_rating_id, notes, author, created_at')
   .eq('prop_manager_id', property_info.prop_manager_id)
 
-const rent = property_info.rent.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+const rent = property_info.rent.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
 
-let parking_info = property_info.parking_covered ? `Covered, ${property_info.parking_spots}` : `Not Covered, ${property_info.parking_spots}`
-
+let parking_info = property_info.parking_covered
+  ? `Covered, ${property_info.parking_spots}`
+  : `Not Covered, ${property_info.parking_spots}`
 </script>
 
 <template>
@@ -40,12 +41,16 @@ let parking_info = property_info.parking_covered ? `Covered, ${property_info.par
 
   <div class="container">
     <div class="d-flex flex-wrap">
-
       <div class="flex-grow-1">
         <h1>{{ property_info.address_ln1 }}</h1>
-        <h4 class="fw-light">{{ property_info.city + ', ' + property_info.state + ' ' + property_info.zip }}</h4>
+        <h4 class="fw-light">
+          {{ property_info.city + ', ' + property_info.state + ' ' + property_info.zip }}
+        </h4>
         <h5 class="fw-light">
-          Lease Term: <span class="badge rounded-pill text-bg-success">{{ property_info.lease_time_frame }}</span>
+          Lease Term:
+          <span class="badge rounded-pill text-bg-success">{{
+            property_info.lease_time_frame
+          }}</span>
         </h5>
         <h5 class="text-muted fw-lighter">Managed by {{ manager.business_name }}</h5>
       </div>
@@ -55,9 +60,7 @@ let parking_info = property_info.parking_covered ? `Covered, ${property_info.par
       </div>
     </div>
 
-
     <div class="mt-4 d-flex flex-wrap">
-
       <div class="me-4">
         <h3 style="width: 100%">Lease Details</h3>
         <div class="d-flex flex-wrap mb-4">
@@ -72,9 +75,14 @@ let parking_info = property_info.parking_covered ? `Covered, ${property_info.par
         <div class="d-flex flex-wrap mb-4">
           <Card :title="`Transit`" :content="`${property_info.transit_walking} mi.`" />
           <Card :title="`POI`" :content="`${property_info.poi_walking} mi.`" />
-          <Card :title="`Violations`"
-            :content="`${property_info.violations === null ? '0' : property_info.violations}`" />
-          <Card :title="`Bedbugs`" :content="`${property_info.bed_bugs === null ? '0' : property_info.bed_bugs}`" />
+          <Card
+            :title="`Violations`"
+            :content="`${property_info.violations === null ? '0' : property_info.violations}`"
+          />
+          <Card
+            :title="`Bedbugs`"
+            :content="`${property_info.bed_bugs === null ? '0' : property_info.bed_bugs}`"
+          />
         </div>
       </div>
 
@@ -87,7 +95,6 @@ let parking_info = property_info.parking_covered ? `Covered, ${property_info.par
           <Card v-if="property_info.pets" :title="`Pet Friendly`" :content="`🐈`" />
         </div>
       </div>
-
     </div>
   </div>
 
@@ -95,7 +102,6 @@ let parking_info = property_info.parking_covered ? `Covered, ${property_info.par
     <div class="d-flex flex-wrap">
       <h3 class="fw-light">Reviews for &nbsp;</h3>
       <h3 class="mb-3">{{ manager.business_name }}</h3>
-
     </div>
     <ReviewCard v-for="review in reviews" :key="review.pm_rating_id" :data="review" />
   </div>

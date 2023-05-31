@@ -2,26 +2,25 @@
 defineEmits(['update:modelValue'])
 
 const props = defineProps({
-    label: String,
-    modelValue: String
+  label: String,
+  modelValue: String
 })
-
 </script>
 
 <template>
-    <div class="d-flex flex-wrap">
-        <div class="me-auto">
-            {{ props.label }}
-        </div>
-
-        <div class="col-4">
-            <input 
-                :value="modelValue" 
-                @input="$emit('update:modelValue', $event.target.value)"
-                class="form-control form-control-sm" 
-                type="number"
-                >
-        </div>
+  <div class="d-flex flex-wrap">
+    <div class="me-auto">
+      {{ props.label }}
     </div>
-    <hr>
+
+    <div class="col-4">
+      <input
+        :value="modelValue"
+        @input="$emit('update:modelValue', $event.target.value)"
+        class="form-control form-control-sm"
+        type="number"
+      />
+    </div>
+  </div>
+  <hr />
 </template>
