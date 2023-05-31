@@ -33,7 +33,7 @@ let { data: reviews_raw, error2 } = await supabase
 const reviews = ref(reviews_raw)
 
 let { data: avg_ratings, error3 } = await supabase
-  .from('pm_average_rating')
+  .from('pm_overall_rating')
   .select()
   .eq('prop_manager_id', route.params.id)
 

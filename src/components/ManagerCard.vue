@@ -14,6 +14,7 @@ let props = defineProps({
       <div class="card-body">
         <h5 class="card-title">{{ data.business_name }}</h5>
         <h6>{{ data.email }}</h6>
+        <h6 class="fw-light">{{data.phone}}</h6>
         <pre class="card-text">{{
           data.address_ln1 + '\n' + data.city + ', ' + data.state + ' ' + data.zip
         }}</pre>

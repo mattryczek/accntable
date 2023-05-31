@@ -9,7 +9,7 @@ import Input from '@comp/InlineInputV.vue'
 import { supabase } from '@/supabase'
 
 let { data: tenants, error } = await supabase
-  .from('ten_average_rating')
+  .from('tenant_overall_rating')
   .select()
   .limit(5)
   .order('tenant_id', { ascending: true })

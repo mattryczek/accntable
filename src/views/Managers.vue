@@ -9,7 +9,7 @@ import { supabase } from '@/supabase'
 import { main } from '@popperjs/core';
 
 let { data: managers, error } = await supabase
-  .from('pm_average_rating')
+  .from('pm_overall_rating')
   .select()
   .limit(5)
   .order('prop_manager_id', { ascending: true })

@@ -3,13 +3,17 @@ import { ref } from 'vue'
 
 import Navbar from '@comp/Navbar.vue'
 import MainSearch from '@comp/MainSearch.vue'
-import Footer from '@comp/Footer.vue'
 
 import PropertyCard from '@comp/PropertyCard.vue'
 import ManagerCard from '@comp/ManagerCard.vue'
 import TenantCard from '@comp/TenantCard.vue'
 
 import { supabase } from '@/supabase'
+
+const search_query = ref("")
+const properties = ref(0)
+const managers = ref(0)
+const tenants = ref(0)
 
 async function formOnSubmit(e) {
   let formData = new FormData(e.target)
@@ -18,6 +22,8 @@ async function formOnSubmit(e) {
   properties.value = await get_properties(formData.query)
   managers.value = await get_managers(formData.query)
   tenants.value = await get_tenants(formData.query)
+
+  console.log(properties.value)
 
 
   // https://stackoverflow.com/a/58239634
@@ -32,7 +38,7 @@ function _map(obj, func) {
 async function get_properties(query) {
 
   let { data: result, error } = await supabase
-    .from('property')
+    .from('property_char_view')
     .select()
 
   query = query.toUpperCase()
@@ -76,11 +82,6 @@ async function get_tenants(query) {
   )
 }
 
-const search_query = ref("")
-const properties = ref()
-const managers = ref()
-const tenants = ref()
-
 </script>
 
 <template>
@@ -90,7 +91,7 @@ const tenants = ref()
       <MainSearch v-model="search_query" />
     </form>
 
-    <div class="d-flex flex-wrap mb-4" v-if="search_query.length > 0 && properties.length > 0">
+    <div class="d-flex flex-wrap mb-4" v-if="properties.length > 0">
       <div class="d-flex flex-wrap" style="width: 100%;">
         <p class="fs-1">{{ search_query }}</p>
         <p class="fs-1 fw-lighter">&nbsp;| Properties</p>
@@ -101,7 +102,7 @@ const tenants = ref()
       </div>
     </div>
 
-    <div class="d-flex flex-wrap mb-4" v-if="search_query.length > 0 && managers.length > 0">
+    <div class="d-flex flex-wrap mb-4" v-if="managers.length > 0">
       <div class="d-flex flex-wrap" style="width: 100%;">
         <p class="fs-1">{{ search_query }}</p>
         <p class="fs-1 fw-lighter">&nbsp;| Property Managers</p>
@@ -112,7 +113,7 @@ const tenants = ref()
       </div>
     </div>
 
-    <div class="d-flex flex-wrap" v-if="search_query.length > 0 && tenants.length > 0">
+    <div class="d-flex flex-wrap" v-if="tenants.length > 0">
       <div class="d-flex flex-wrap" style="width: 100%;">
         <p class="fs-1">{{ search_query }}</p>
         <p class="fs-1 fw-lighter">&nbsp;| Tenants</p>

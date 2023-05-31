@@ -31,7 +31,6 @@ let { data: reviews, error3 } = await supabase
 
 const rent = property_info.rent.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
 
-
 </script>
 
 <template>
@@ -43,10 +42,10 @@ const rent = property_info.rent.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
       <div class="flex-grow-1">
         <h1>{{ property_info.address_ln1 }}</h1>
         <h4 class="fw-light">{{ property_info.city + ', ' + property_info.state + ' ' + property_info.zip }}</h4>
-        <h5 class="text-muted fw-lighter">Managed by {{ manager.business_name }}</h5>
         <h5 class="fw-light">
-          <span class="badge rounded-pill text-bg-secondary">{{ property_info.lease_time_frame }}</span>
+          Lease Term: <span class="badge rounded-pill text-bg-secondary">{{ property_info.lease_time_frame }}</span>
         </h5>
+        <h5 class="text-muted fw-lighter">Managed by {{ manager.business_name }}</h5>
       </div>
 
       <div>

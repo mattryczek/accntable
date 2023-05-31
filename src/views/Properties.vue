@@ -26,7 +26,7 @@ const parking_max = ref(5)
 const rent_min = ref(0)
 const rent_max = ref(4500)
 
-const laundry = ref('In Unit')
+const laundry = ref('In-Unit')
 const lease = ref('Annual')
 
 const transit_dist = ref(15)
@@ -208,8 +208,8 @@ const filtered_ref = computed(() => {
             <select v-model="laundry" class="form-select form-select-sm flex-fill ms-4"
               aria-label=".form-select-sm example">
               <option></option>
-              <option value="In Unit">In Unit</option>
-              <option value="On Property Premise">On Site</option>
+              <option value="In-Unit">In-Unit</option>
+              <option value="On Prem">On Prem</option>
             </select>
           </div>
           <hr>
@@ -225,7 +225,7 @@ const filtered_ref = computed(() => {
               aria-label=".form-select-sm example">
               <option></option>
               <option value="Annual">Annual</option>
-              <option value="Month-to-Month">Month-to-Month</option>
+              <option value="Month to Month">Month to Month</option>
             </select>
           </div>
           <hr>
@@ -301,13 +301,12 @@ const filtered_ref = computed(() => {
       </div>
 
       <div class="col-9">
-        <div class="row row-cols-1">
-          <!-- row-cols-1 row-cols-lg-3 row-cols-md-2 row-cols-sm-1 -->
+        <div class="d-flex flex-wrap">
           <div v-if="empty">
             <h1 class="display-6 fs-1">No results found!</h1>
             <p>Try adjusting your filters to show properties of interest.</p>
           </div>
-          <PropertyCard class="mb-2" v-for="property in filtered_ref" :key="property.property_id" :data="property" />
+          <PropertyCard class="mb-2 me-2" v-for="property in filtered_ref" :key="property.property_id" :data="property" />
         </div>
       </div>
     </div>

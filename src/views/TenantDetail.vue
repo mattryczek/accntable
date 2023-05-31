@@ -37,7 +37,7 @@ let { data: reviews_written, error4 } = await supabase
     .order('created_at', { ascending: true })
 
 let { data: avg_ratings, error3 } = await supabase
-    .from('ten_average_rating')
+    .from('tenant_overall_rating')
     .select()
     .eq('tenant_id', route.params.id)
 
