@@ -3,13 +3,11 @@ const props = defineProps({
   data: Object
 })
 
-console.log(props.data)
-
 const rent = props.data.rent.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
 </script>
 
 <template>
-  <div class="card shadow-sm h-100" style="max-width: 20rem">
+  <div class="card shadow-sm" style="max-width: 20rem">
     <img :src="data.image_url" class="card-img-top" style="max-width: 300px" />
     <div class="card-body">
       <RouterLink
