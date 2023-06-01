@@ -26,7 +26,7 @@ manager = manager[0]
 
 let { data: reviews, error3 } = await supabase
   .from('pm_ratings')
-  .select('pm_rating_id, notes, author, created_at')
+  .select('pm_rating_id, notes, author, created_at, thumbs_up, thumbs_down')
   .eq('prop_manager_id', property_info.prop_manager_id)
 
 const rent = property_info.rent.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
