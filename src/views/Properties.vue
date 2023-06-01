@@ -4,6 +4,10 @@ import { ref, computed } from 'vue'
 import Navbar from '@/components/Navbar.vue'
 import PropertyCard from '@comp/PropertyCard.vue'
 
+import InlineCheck from '@comp/InlineCheck.vue'
+import InlineNumber from '@comp/InlineNumber.vue'
+import InlineSelect from '@comp/InlineSelect.vue'
+
 import { supabase } from '@/supabase'
 
 let { data: properties, error } = await supabase
@@ -215,129 +219,17 @@ const filtered_ref = computed(() => {
           <hr />
           <!-- End Rent -->
 
-          <!-- Laundry -->
-          <div class="d-flex">
-            <div class="me-auto">Laundry</div>
+          <InlineSelect v-model="laundry" :label="`Laundry`" :options="['In Unit', 'Onsite']"/>
+          <InlineSelect v-model="lease" :label="`Lease Term`" :options="['Annual', 'Month to Month' ]" />
 
-            <select
-              v-model="laundry"
-              class="form-select form-select-sm flex-fill ms-4"
-              aria-label=".form-select-sm example"
-            >
-              <option></option>
-              <option value="In Unit">In Unit</option>
-              <option value="Onsite">Onsite</option>
-            </select>
-          </div>
-          <hr />
-          <!-- End Laundry -->
+          <InlineNumber v-model.lazy="transit_dist" :label="`Transit Distance`" />
+          <InlineNumber v-model.lazy="poi_dist" :label="`POI Distance`" />
 
-          <!-- Lease Type -->
-          <div class="d-flex">
-            <div class="me-auto">Lease Type</div>
+          <InlineNumber v-model.lazy="violations" :label="`Violations`" />
+          <InlineNumber v-model.lazy="bedbugs"  :label="`Bedbug Reports`" />
 
-            <select
-              v-model="lease"
-              class="form-select form-select-sm flex-fill ms-4"
-              aria-label=".form-select-sm example"
-            >
-              <option></option>
-              <option value="Annual">Annual</option>
-              <option value="Month to Month">Month to Month</option>
-            </select>
-          </div>
-          <hr />
-          <!-- End Lease -->
-
-          <!-- Transit -->
-          <div class="d-flex">
-            <div class="col-8">
-              Transit Distance
-              <span title="Distance to train or public transportation in miles">❓</span>
-            </div>
-            <input
-              v-model.lazy="transit_dist"
-              class="form-control form-control-sm"
-              type="text"
-              placeholder="mi."
-            />
-          </div>
-          <hr />
-          <!-- End Transit -->
-
-          <!-- POI -->
-          <div class="d-flex">
-            <div class="col-8">
-              POI Distance
-              <span title="Distance to points of interest such as grocers and malls.">❓</span>
-            </div>
-            <input
-              v-model.lazy="poi_dist"
-              class="form-control form-control-sm"
-              type="text"
-              placeholder="mi."
-            />
-          </div>
-          <hr />
-          <!-- End POI -->
-
-          <!-- Violations -->
-          <div class="d-flex">
-            <div class="col-8">Violations</div>
-            <input
-              v-model.lazy="violations"
-              class="form-control form-control-sm"
-              type="text"
-              placeholder="max"
-            />
-          </div>
-          <hr />
-          <!-- End Violations -->
-
-          <!-- Bedbugs -->
-          <div class="d-flex">
-            <div class="col-8">Bedbug Reports</div>
-            <input
-              v-model.lazy="bedbugs"
-              class="form-control form-control-sm"
-              type="text"
-              placeholder="max"
-            />
-          </div>
-          <hr />
-          <!-- End Bedbugs -->
-
-          <!-- Gym -->
-          <div class="d-flex">
-            <div class="me-auto">Gym in Building</div>
-            <div class="form-check form-switch me-2">
-              <input
-                v-model="gym"
-                class="form-check-input"
-                type="checkbox"
-                role="switch"
-                id="gym_switch"
-              />
-            </div>
-          </div>
-          <hr />
-          <!-- End Gym -->
-
-          <!-- Pets -->
-          <div class="d-flex">
-            <div class="me-auto">Pets Allowed</div>
-            <div class="form-check form-switch me-2">
-              <input
-                v-model="pets"
-                class="form-check-input"
-                type="checkbox"
-                role="switch"
-                id="gym_switch"
-              />
-            </div>
-          </div>
-          <hr />
-          <!-- End Pets -->
+          <InlineCheck v-model="gym" :label="`Gym in Building`" />
+          <InlineCheck v-model="pets" :label="`Pets Allowed`" />
         </div>
       </div>
 

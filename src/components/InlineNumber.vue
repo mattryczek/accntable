@@ -3,7 +3,7 @@ defineEmits(['update:modelValue'])
 
 const props = defineProps({
   label: String,
-  modelValue: String
+  modelValue: Number
 })
 </script>
 

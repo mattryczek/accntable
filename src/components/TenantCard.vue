@@ -8,7 +8,7 @@ let props = defineProps({
 
 <template>
   <RouterLink :to="`/tenant/${data.tenant_id}`" class="nav-link">
-    <div class="card my-2 shadow-sm">
+    <div class="card mb-2 shadow-sm">
       <div class="card-body">
         <h5 class="card-title">{{ data.first_name + ' ' + data.last_name }}</h5>
         <Stars :star_count="data.overall_rating" />

@@ -49,32 +49,39 @@ const filtered = computed(() => {
 <template>
   <Navbar />
   <div class="managers container mt-4">
-    <div class="row">
-      <div class="col-3">
-        <h1 class="display-6 fs-1">Filters</h1>
-        <div class="overflow-scroll px-1" id="filters">
-          <Stars v-model="responsiveness" :label="`Responsiveness`" />
-          <Stars v-model="friendliness" :label="`Friendliness`" />
-          <Stars v-model="management" :label="`Management`" />
-          <Stars v-model="maintenance" :label="`Maintenance`" />
-          <Stars v-model="rent" :label="`Rent Fairness`" />
-          <Stars v-model="communication" :label="`Communication`" />
+    <div class="d-flex flex-wrap">
+
+      <div class="accordion mb-3 me-3" id="1">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+              aria-expanded="true" aria-controls="collapseOne">
+              <h4 class="me-4">Filters</h4>
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#1">
+            <div class="accordion-body">
+              <Stars v-model="responsiveness" :label="`Responsiveness`" />
+              <Stars v-model="friendliness" :label="`Friendliness`" />
+              <Stars v-model="management" :label="`Management`" />
+              <Stars v-model="maintenance" :label="`Maintenance`" />
+              <Stars v-model="rent" :label="`Rent Fairness`" />
+              <Stars v-model="communication" :label="`Communication`" />
+            </div>
+          </div>
         </div>
       </div>
+
       <div class="col-9">
         <div v-if="empty">
           <h1 class="display-6 fs-1">No results found!</h1>
           <p>Try relaxing your filters to show more property managers.</p>
         </div>
         <div class="d-flex flex-wrap">
-          <ManagerCard
-            class="me-2 mb-2"
-            v-for="manager in filtered"
-            :key="manager.prop_manager_id"
-            :data="manager"
-          />
+          <ManagerCard class="me-2 mb-2" v-for="manager in filtered" :key="manager.prop_manager_id" :data="manager" />
         </div>
       </div>
+
     </div>
   </div>
 </template>
