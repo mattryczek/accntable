@@ -23,8 +23,6 @@ async function formOnSubmit(e) {
   managers.value = await get_managers(formData.query)
   tenants.value = await get_tenants(formData.query)
 
-  console.log(properties.value)
-
   // https://stackoverflow.com/a/58239634
   // e.target.reset()
   // search_query.value = ""
@@ -66,8 +64,8 @@ async function get_managers(query) {
 
 async function get_tenants(query) {
   let { data: result, error } = await supabase
-    .from('tenant')
-    .select('first_name, last_name, email, tenant_id')
+    .from('tenant_overall_rating')
+    .select()
 
   query = query.toUpperCase()
 
