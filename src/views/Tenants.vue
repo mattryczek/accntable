@@ -50,12 +50,17 @@ const filtered = computed(() => {
   <Navbar />
   <div class="tenants container mt-4">
     <div class="d-flex flex-wrap">
-
       <div class="accordion mb-3 me-3" id="1">
         <div class="accordion-item">
           <h2 class="accordion-header">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
-              aria-expanded="true" aria-controls="collapseOne">
+            <button
+              class="accordion-button"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseOne"
+              aria-expanded="true"
+              aria-controls="collapseOne"
+            >
               <h4 class="me-4">Filters</h4>
             </button>
           </h2>
@@ -70,7 +75,6 @@ const filtered = computed(() => {
             </div>
           </div>
         </div>
-
       </div>
       <div>
         <div v-if="empty">
@@ -79,7 +83,12 @@ const filtered = computed(() => {
         </div>
 
         <div class="d-flex flex-wrap flex-grow-1">
-          <TenantCard class="me-2 mb-2" v-for="tenant in filtered" :key="tenant.tenant_id" :data="tenant" />
+          <TenantCard
+            class="me-2 mb-2"
+            v-for="tenant in filtered"
+            :key="tenant.tenant_id"
+            :data="tenant"
+          />
         </div>
       </div>
     </div>

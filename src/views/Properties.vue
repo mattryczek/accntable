@@ -86,24 +86,31 @@ const filtered_ref = computed(() => {
   <Navbar />
   <div class="properties container mt-3">
     <div class="d-flex flex-wrap">
-
-      <div class="accordion mb-3 me-3" id="1" style="max-width: 17rem;">
+      <div class="accordion mb-3 me-3" id="1" style="max-width: 17rem">
         <div class="accordion-item">
           <h2 class="accordion-header">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
-              aria-expanded="true" aria-controls="collapseOne">
+            <button
+              class="accordion-button"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseOne"
+              aria-expanded="true"
+              aria-controls="collapseOne"
+            >
               <h4 class="me-4">Filters</h4>
             </button>
           </h2>
           <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#1">
             <div class="accordion-body">
-
               <div class="container">
                 <div class="row">Beds</div>
 
                 <div class="row d-flex flex-nowrap mt-2">
-                  <select v-model="beds_min" class="form-select form-select-sm flex-fill me-2"
-                    aria-label=".form-select-sm example">
+                  <select
+                    v-model="beds_min"
+                    class="form-select form-select-sm flex-fill me-2"
+                    aria-label=".form-select-sm example"
+                  >
                     <option>min</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -112,8 +119,11 @@ const filtered_ref = computed(() => {
                     <option value="5">5</option>
                   </select>
 
-                  <select v-model="beds_max" class="form-select form-select-sm flex-fill ms-2"
-                    aria-label=".form-select-sm example">
+                  <select
+                    v-model="beds_max"
+                    class="form-select form-select-sm flex-fill ms-2"
+                    aria-label=".form-select-sm example"
+                  >
                     <option>max</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -131,8 +141,11 @@ const filtered_ref = computed(() => {
                 <div class="row">Baths</div>
 
                 <div class="row d-flex flex-nowrap mt-2">
-                  <select v-model="baths_min" class="form-select form-select-sm flex-fill me-2"
-                    aria-label=".form-select-sm example">
+                  <select
+                    v-model="baths_min"
+                    class="form-select form-select-sm flex-fill me-2"
+                    aria-label=".form-select-sm example"
+                  >
                     <option>min</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -141,8 +154,11 @@ const filtered_ref = computed(() => {
                     <option value="5">5</option>
                   </select>
 
-                  <select v-model="baths_max" class="form-select form-select-sm flex-fill ms-2"
-                    aria-label=".form-select-sm example">
+                  <select
+                    v-model="baths_max"
+                    class="form-select form-select-sm flex-fill ms-2"
+                    aria-label=".form-select-sm example"
+                  >
                     <option>max</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -160,8 +176,11 @@ const filtered_ref = computed(() => {
                 <div class="row">Parking Spots</div>
 
                 <div class="row d-flex flex-nowrap mt-2">
-                  <select v-model="parking_min" class="form-select form-select-sm flex-fill me-2"
-                    aria-label=".form-select-sm example">
+                  <select
+                    v-model="parking_min"
+                    class="form-select form-select-sm flex-fill me-2"
+                    aria-label=".form-select-sm example"
+                  >
                     <option>min</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -170,8 +189,11 @@ const filtered_ref = computed(() => {
                     <option value="5">5</option>
                   </select>
 
-                  <select v-model="parking_max" class="form-select form-select-sm flex-fill ms-2"
-                    aria-label=".form-select-sm example">
+                  <select
+                    v-model="parking_max"
+                    class="form-select form-select-sm flex-fill ms-2"
+                    aria-label=".form-select-sm example"
+                  >
                     <option>max</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -189,18 +211,30 @@ const filtered_ref = computed(() => {
                 <div class="row">Rent</div>
 
                 <div class="row d-flex flex-nowrap mt-2">
-                  <input v-model.lazy="rent_min" class="flex-fill me-2 form-control form-control-sm" type="text"
-                    placeholder="min" />
+                  <input
+                    v-model.lazy="rent_min"
+                    class="flex-fill me-2 form-control form-control-sm"
+                    type="text"
+                    placeholder="min"
+                  />
 
-                  <input v-model.lazy="rent_max" class="flex-fill ms-2 form-control form-control-sm" type="text"
-                    placeholder="max" />
+                  <input
+                    v-model.lazy="rent_max"
+                    class="flex-fill ms-2 form-control form-control-sm"
+                    type="text"
+                    placeholder="max"
+                  />
                 </div>
               </div>
               <hr />
               <!-- End Rent -->
 
               <InlineSelect v-model="laundry" :label="`Laundry`" :options="['In Unit', 'Onsite']" />
-              <InlineSelect v-model="lease" :label="`Lease Term`" :options="['Annual', 'Month to Month']" />
+              <InlineSelect
+                v-model="lease"
+                :label="`Lease Term`"
+                :options="['Annual', 'Month to Month']"
+              />
 
               <InlineNumber v-model.lazy="transit_dist" :label="`Transit Distance`" />
               <InlineNumber v-model.lazy="poi_dist" :label="`POI Distance`" />
@@ -210,18 +244,22 @@ const filtered_ref = computed(() => {
 
               <InlineCheck v-model="gym" :label="`Gym in Building`" />
               <InlineCheck v-model="pets" :label="`Pets Allowed`" />
-
             </div>
           </div>
         </div>
       </div>
 
-      <div class="d-flex flex-wrap" style="max-height: 0rem;">
+      <div class="d-flex flex-wrap" style="max-height: 0rem">
         <div v-if="empty">
           <h1 class="display-6 fs-1">No results found!</h1>
           <p>Try adjusting your filters to show properties of interest.</p>
         </div>
-        <PropertyCard class="mb-2 me-2" v-for="property in filtered_ref" :key="property.property_id" :data="property" />
+        <PropertyCard
+          class="mb-2 me-2"
+          v-for="property in filtered_ref"
+          :key="property.property_id"
+          :data="property"
+        />
       </div>
     </div>
   </div>

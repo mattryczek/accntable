@@ -63,9 +63,7 @@ async function get_managers(query) {
 }
 
 async function get_tenants(query) {
-  let { data: result, error } = await supabase
-    .from('tenant_overall_rating')
-    .select()
+  let { data: result, error } = await supabase.from('tenant_overall_rating').select()
 
   query = query.toUpperCase()
 

@@ -50,12 +50,17 @@ const filtered = computed(() => {
   <Navbar />
   <div class="managers container mt-4">
     <div class="d-flex flex-wrap">
-
       <div class="accordion mb-3 me-3" id="1">
         <div class="accordion-item">
           <h2 class="accordion-header">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
-              aria-expanded="true" aria-controls="collapseOne">
+            <button
+              class="accordion-button"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseOne"
+              aria-expanded="true"
+              aria-controls="collapseOne"
+            >
               <h4 class="me-4">Filters</h4>
             </button>
           </h2>
@@ -78,10 +83,14 @@ const filtered = computed(() => {
           <p>Try relaxing your filters to show more property managers.</p>
         </div>
         <div class="d-flex flex-wrap">
-          <ManagerCard class="me-2 mb-2" v-for="manager in filtered" :key="manager.prop_manager_id" :data="manager" />
+          <ManagerCard
+            class="me-2 mb-2"
+            v-for="manager in filtered"
+            :key="manager.prop_manager_id"
+            :data="manager"
+          />
         </div>
       </div>
-
     </div>
   </div>
 </template>
