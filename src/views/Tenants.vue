@@ -11,7 +11,7 @@ import { supabase } from '@/supabase'
 let { data: tenants, error } = await supabase
   .from('tenant_overall_rating')
   .select()
-  .limit(10)
+  .limit()
   .order('tenant_id', { ascending: true })
 
 const empty = ref(false)

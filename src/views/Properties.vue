@@ -24,9 +24,6 @@ const beds_max = ref(5)
 const baths_min = ref(1)
 const baths_max = ref(5)
 
-const parking_min = ref(1)
-const parking_max = ref(5)
-
 const rent_min = ref(0)
 const rent_max = ref(4500)
 
@@ -41,6 +38,7 @@ const bedbugs = ref(5)
 
 const gym = ref(true)
 const pets = ref(false)
+const parking = ref(false)
 
 const filtered_ref = computed(() => {
   // Empty array of matching properties to start
@@ -48,9 +46,6 @@ const filtered_ref = computed(() => {
 
   result = properties.filter((p) => p.bedrooms >= beds_min.value && p.bedrooms <= beds_max.value)
   result = result.filter((p) => p.baths >= baths_min.value && p.baths <= baths_max.value)
-  result = result.filter((p) => p.baths >= baths_min.value && p.baths <= baths_max.value)
-
-  // TODO -- see how we want to redo parking spots
 
   // Rent
   result = result.filter((p) => p.rent >= rent_min.value && p.rent <= rent_max.value)
@@ -74,6 +69,7 @@ const filtered_ref = computed(() => {
   // Toggles
   result = result.filter((p) => p.gym === gym.value)
   result = result.filter((p) => p.pets === pets.value)
+  result = result.filter((p) => p.parking_spot === parking.value)
 
   // Render results found/not found div
   result.length === 0 ? (empty.value = true) : (empty.value = false)
@@ -171,41 +167,6 @@ const filtered_ref = computed(() => {
               <hr />
               <!-- End Bath -->
 
-              <!-- Parking -->
-              <div class="container">
-                <div class="row">Parking Spots</div>
-
-                <div class="row d-flex flex-nowrap mt-2">
-                  <select
-                    v-model="parking_min"
-                    class="form-select form-select-sm flex-fill me-2"
-                    aria-label=".form-select-sm example"
-                  >
-                    <option>min</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                  </select>
-
-                  <select
-                    v-model="parking_max"
-                    class="form-select form-select-sm flex-fill ms-2"
-                    aria-label=".form-select-sm example"
-                  >
-                    <option>max</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                  </select>
-                </div>
-              </div>
-              <hr />
-              <!-- End Parking -->
-
               <!-- Rent -->
               <div class="container">
                 <div class="row">Rent</div>
@@ -244,6 +205,7 @@ const filtered_ref = computed(() => {
 
               <InlineCheck v-model="gym" :label="`Gym in Building`" />
               <InlineCheck v-model="pets" :label="`Pets Allowed`" />
+              <InlineCheck v-model="parking" :label="`Parking Spots`" />
             </div>
           </div>
         </div>
