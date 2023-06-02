@@ -11,7 +11,7 @@ import { main } from '@popperjs/core'
 let { data: managers, error } = await supabase
   .from('pm_overall_rating')
   .select()
-  .limit(5)
+  .limit()
   .order('prop_manager_id', { ascending: true })
 
 const empty = ref(false)
