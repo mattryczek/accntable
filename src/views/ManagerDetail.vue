@@ -96,9 +96,9 @@ async function post_data(data) {
         class="accordion-collapse collapse show"
         data-bs-parent="#accordionExample"
       >
-        <div class="accordion-body">
+        <div class="accordion-body d-flex flex-wrap ">
           <PropertyCard
-            class="mb-2"
+            class="mb-2 me-2"
             style="max-width: 17rem"
             v-for="property in properties"
             :key="property.property_id"
