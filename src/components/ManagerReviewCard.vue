@@ -120,6 +120,6 @@ img {
 }
 
 .modal {
-  margin-top: 40%;
+  margin-top: 18rem;
 }
 </style>
