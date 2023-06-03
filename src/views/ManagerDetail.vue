@@ -50,7 +50,9 @@ async function post_data(data) {
   reviews.value.unshift({
     author: data.author,
     notes: data.notes,
-    created_at: data.created_at
+    created_at: data.created_at,
+    thumbs_up: 0,
+    thumbs_down: 0
   })
 }
 </script>
